@@ -37,12 +37,16 @@ $ make
 
 $ sudo make install 
 
+![yosys install](https://github.com/user-attachments/assets/4e7d2d5d-8f01-41a1-b5ee-0480314ea71b)
+
 
 ## Iverilog 
   
 sudo apt-get update 
 
 sudo apt-get install iverilog
+
+![iverilog install](https://github.com/user-attachments/assets/d66d3bdf-2b25-49e0-a1b3-7bd20de6c713)
 
 
 # gtkwave 
@@ -51,3 +55,5 @@ $ sudo apt-get update
 
 $ sudo apt install gtkwave 
 
+
+![gtkwave install](https://github.com/user-attachments/assets/13abd841-7aba-440d-bd6a-62997ea80f3c)
