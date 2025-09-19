@@ -8,6 +8,7 @@ This repository documents my week-by-week progress with tasks inside each week.
 Week 0 — Setup & Tools
 Task 	Description 	Status
 Task 0 	 Tools Installation — Installed Iverilog, Yosys, and gtkWave 	Done
+
 Key Learnings from Week 0
 
     Installed and verified open-source EDA tools successfully.
