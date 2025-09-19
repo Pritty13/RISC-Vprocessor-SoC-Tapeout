@@ -1,0 +1,22 @@
+# RISC-Vprocessor-SoC-Tapeout
+
+This repository documents the setup and tool installation required for the **RISC-V Reference SoC Tapeout Program** conducted by VLSI System Design (VSD).  
+
+---
+
+## System Requirements
+- **OS**: Ubuntu 20.04 or higher  
+- **RAM**: 6 GB  
+- **HDD**: 50 GB free space  
+- **CPU**: 4 vCPUs  
+
+---
+
+## Resizing the Ubuntu Window to Fit Screen
+Run the following to install VirtualBox Guest Additions (inside Ubuntu VM):
+
+```bash
+sudo apt update
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+cd /media/$USER/VBox_GAs_*/   # Adjust version if needed
+./autorun.sh
