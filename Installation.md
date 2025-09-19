@@ -19,6 +19,7 @@ Run the following to install VirtualBox Guest Additions (inside Ubuntu VM):
 
 ## Yosys 
 $ sudo apt-get update 
+
 $ git clone https://github.com/YosysHQ/yosys.git 
 $ cd yosys 
 $ sudo apt install make (If make is not installed please install it)  
