@@ -39,7 +39,6 @@ $ sudo make install
 
 
 ## Iverilog 
-* Steps to install iverilog *
   
 sudo apt-get update 
 
@@ -47,7 +46,6 @@ sudo apt-get install iverilog
 
 
 # gtkwave 
-* Steps to install gtkwave *
   
 $ sudo apt-get update 
 
