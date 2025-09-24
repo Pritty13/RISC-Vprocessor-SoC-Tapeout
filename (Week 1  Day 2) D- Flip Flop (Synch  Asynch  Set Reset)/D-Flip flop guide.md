@@ -127,11 +127,11 @@ gtkwave tb_asyncres.vcd
 
 yosys
 
-**Read the liberty library (Library file loaction can vary)**
+**Read the liberty library (Library file location can vary)**
 
 read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
 
-**Read the Verilog code (file loaction can vary)**
+**Read the Verilog code (file location can vary)**
 
 read_verilog /home/vsduser/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/asyncres.v
 
