@@ -156,39 +156,48 @@ show
 **Waveform:**
 
 **Synchronous Reset:**
-![synch reset dff output with code](https://github.com/user-attachments/assets/071b97a9-d54b-4877-ab27-d053dd1a54a1)
+
+![synch reset dff output with code](https://github.com/user-attachments/assets/c0105611-20fb-4366-9c40-f168ffe1895c)
+
 
 **ASynchronous Reset:**
 
-![asynch reset dff output with code](https://github.com/user-attachments/assets/a9c4084b-5c59-41f6-96ec-440ee0fae174)
+![asynch reset dff output with code](https://github.com/user-attachments/assets/0b17f5e9-2cb1-4f09-98ad-29fb775c9553)
+
 
 **ASynchronous set:**
-![asynch set dff output with code](https://github.com/user-attachments/assets/36e94fbb-ffd8-4963-bd8c-f58c39e91f93)
+
+
+![asynch set dff output with code](https://github.com/user-attachments/assets/efbac31e-1d2f-4dc5-b671-2e728aa9074b)
 
 
 **ASynchronous Reset and Synchronous Reset:**
 
+![synch reset asynch reset dff output with code](https://github.com/user-attachments/assets/6f0cdad2-915c-4ce6-b403-681f74eae141)
 
-![synch reset asynch reset dff output with code](https://github.com/user-attachments/assets/9a8a392d-ba1f-4c26-8194-082561128ebf)
 
 
 **RTL Diagram:**
 
 
 **Synchronous Reset:**
-![synch reset dff RTL with code](https://github.com/user-attachments/assets/b17e6e6c-cfa9-4f35-8740-441a184646f7)
+
+![synch reset dff RTL with code](https://github.com/user-attachments/assets/8cffeb27-25cb-4a29-84f6-d8574b8caf54)
 
 
 **ASynchronous Reset:**
-![asynch reset dff RTL with code](https://github.com/user-attachments/assets/45c16813-fb1a-44b9-8467-56d9cf17d34a)
 
+![asynch reset dff RTL with code](https://github.com/user-attachments/assets/88ed7284-bc6c-4874-872c-836b36905f9d)
 
 **ASynchronous set:**
 
-![asynch set dff RTL with code](https://github.com/user-attachments/assets/4eee5936-4893-4f40-bbea-093b93b17403)
+![asynch set dff RTL with code](https://github.com/user-attachments/assets/9298d468-5cd6-46a8-9b89-dc3cda98bb6f)
+
+
 
 **ASynchronous Reset and Synchronous Reset:**
+![synch reset asynch reset dff RTL with code](https://github.com/user-attachments/assets/25e0ed37-65ef-4215-aa60-930547aef3ce)
 
-![synch reset asynch reset dff RTL with code](https://github.com/user-attachments/assets/0b80f99b-f332-43d7-aa39-de427601974e)
+
 
 ---
