@@ -9,7 +9,6 @@ This document (`dff.md`) provides a **complete reference** for designing, simula
 * [Overview](#overview)
 * [Prerequisites](#prerequisites)
 * [Verilog RTL Code](#verilog-rtl-code)
-* [Testbench Code](#testbench-code)
 * [Simulation with Icarus Verilog](#simulation-with-icarus-verilog)
 * [Waveform Viewing in GTKWave](#waveform-viewing-in-gtkwave)
 * [RTL Synthesis with Yosys](#rtl-synthesis-with-yosys)
@@ -32,144 +31,121 @@ A D Flip-Flop captures the value of the input `d` on the rising edge of the cloc
 * **Icarus Verilog** (`iverilog`)
 * **GTKWave** (to view waveforms)
 * **Yosys** (for RTL synthesis)
-
-Install (Ubuntu/Debian example):
-
-```bash
-sudo apt update
-sudo apt install iverilog gtkwave yosys graphviz -y
-```
-
 ---
 
 ## Verilog RTL Code
 
 ```verilog
-// File: dff.v
-`timescale 1ns/1ps
 
-module dff (
-    input  wire clk,
-    input  wire d,
-    input  wire arst,   // asynchronous reset (active high)
-    input  wire set,    // asynchronous set (active high)
-    input  wire srst,   // synchronous reset (active high)
-    output reg  q
-);
+**ASynchronous set** 
 
-    always @(posedge clk or posedge arst or posedge set) begin
-        if (arst)
-            q <= 1'b0;     // async reset
-        else if (set)
-            q <= 1'b1;     // async set
-        else if (srst)
-            q <= 1'b0;     // sync reset
-        else
-            q <= d;        // normal operation
-    end
+module dff_async_set ( input clk ,  input async_set , input d , output reg q );
+always @ (posedge clk , posedge async_set)
+begin
+	if(async_set)
+		q <= 1'b1;
+	else	
+		q <= d;
+end
+endmodule
 
+```
+**Synchronous Reset**
+```
+module dff_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+always @ (posedge clk )
+begin
+	if (sync_reset)
+		q <= 1'b0;
+	else	
+		q <= d;
+end
+endmodule
+```
+**ASynchronous Reset**
+```
+module dff_asyncres ( input clk ,  input async_reset , input d , output reg q );
+always @ (posedge clk , posedge async_reset)
+begin
+	if(async_reset)
+		q <= 1'b0;
+	else	
+		q <= d;
+end
 endmodule
 ```
 
----
-
-## Testbench Code
-
-```verilog
-// File: tb_dff.v
-`timescale 1ns/1ps
-
-module tb_dff;
-
-    reg clk;
-    reg d;
-    reg arst;
-    reg set;
-    reg srst;
-    wire q;
-
-    // Instantiate DFF
-    dff uut (
-        .clk(clk),
-        .d(d),
-        .arst(arst),
-        .set(set),
-        .srst(srst),
-        .q(q)
-    );
-
-    initial begin
-        $dumpfile("tb_dff.vcd");
-        $dumpvars(0, tb_dff);
-    end
-
-    // Clock generation
-    initial begin
-        clk = 0;
-        forever #5 clk = ~clk;
-    end
-
-    // Stimulus
-    initial begin
-        d = 0; arst = 0; set = 0; srst = 0;
-
-        #10 d = 1;              // normal operation
-        #10 arst = 1;           // async reset
-        #10 arst = 0; d = 0;
-        #10 set = 1;            // async set
-        #10 set = 0; d = 1;
-        #10 srst = 1;           // sync reset
-        #10 srst = 0; d = 1;
-        #20 $finish;
-    end
-
-    initial begin
-        $display("time\tclk\td\tarst\tset\tsrst\tq");
-        $monitor("%0dns\t%b\t%b\t%b\t%b\t%b\t%b", $time, clk, d, arst, set, srst, q);
-    end
-
+**ASynchronous Reset and Synchronous Reset**
+```
+module dff_asyncres_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+always @ (posedge clk , posedge async_reset)
+begin
+	if(async_reset)
+		q <= 1'b0;
+	else if (sync_reset)
+		q <= 1'b0;
+	else	
+		q <= d;
+end
 endmodule
 ```
-
 ---
+
 
 ## Simulation with Icarus Verilog
+### Step 1: Clone the Workshop Repository
 
-```bash
-# Compile
-overilog -g2012 -o simv dff.v tb_dff.v
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
 
-```
+cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
 
-This generates `tb_dff.vcd` for waveform viewing.
+### Step 2: Install Required Tools
 
----
+sudo apt install iverilog
 
-## Waveform Viewing in GTKWave
+sudo apt install gtkwave
 
-```bash
-gtkwave tb_dff.vcd
-```
+### Step 3: Simulate the Design
 
-* Observe `q` following `d` on the clock edges.
-* When **`arst=1`**, `q` → 0 immediately.
-* When **`set=1`**, `q` → 1 immediately.
-* When **`srst=1`**, `q` resets to 0 on the **next clock edge**.
+**Compile the design and testbench:**
 
----
+iverilog good_mux.v tb_good_mux.v
 
-## RTL Synthesis with Yosys
+**Run the simulation:**
 
-```bash
-yosys -p "read_verilog dff.v; prep -top dff; show"
-```
+./a.out
 
-Or generate a diagram file:
+**View the waveform:**
 
-```bash
-yosys -p "read_verilog dff.v; prep -top dff; write_dot dff.dot"
-dot -Tpng dff.dot -o dff.png
-```
+gtkwave tb_good_mux.vcd
+
+## RTL diagram generation with Yosys
+
+### Step-by-Step Yosys Flow
+
+**Start Yosys**
+
+yosys
+
+**Read the liberty library (Library file loaction can vary)**
+
+read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+**Read the Verilog code (file loaction can vary)**
+
+read_verilog /home/vsduser/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/good_mux.v
+
+**Synthesize the design**
+
+synth -top good_mux
+
+**Technology mapping (Library file loaction can vary)**
+
+abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+**Visualize the gate-level netlist**
+
+show
 
 ---
 
