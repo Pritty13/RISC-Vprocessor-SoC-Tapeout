@@ -139,7 +139,7 @@ read_verilog /home/vsduser/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_file
 
 synth -top asyncres
 
-**Technology mapping (Library file loaction can vary)**
+**Technology mapping (Library file location can vary)**
 
 abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib 
 
@@ -149,22 +149,25 @@ show
 
 ---
 
-## Expected Output
+## Expected Output Waveform 
 
-```
-## Waveform 
 
 Synchronous Reset:
 
+![synch reset dff output with code](https://github.com/user-attachments/assets/313ca01e-6edd-44ba-8514-8f06ae516c1c)
 
 ASynchronous Reset:
 
+![asynch reset dff output with code](https://github.com/user-attachments/assets/fad1e1f5-1536-441a-9268-b761351d7bb1)
 
 ASynchronous set:
+
+![asynch set dff output with code](https://github.com/user-attachments/assets/57de86e9-85f6-41c8-8f43-ff05839c0bc6)
 
 
 ASynchronous Reset and Synchronous Reset:
 
+![synch reset asynch reset dff output with code](https://github.com/user-attachments/assets/5d727fa8-6f7f-4a99-8a2f-c420c75f4542)
 
 
 
