@@ -153,48 +153,48 @@ show
 
 ```
 
-**Waveform:**
+###Waveform:
 
-**Synchronous Reset:**
-
-![synch reset dff output with code](https://github.com/user-attachments/assets/9d83f846-53e2-4e6c-ae9c-49e9392b2f33)
-
-
-**ASynchronous Reset:**
-
-
-
-**ASynchronous set:**
+####Synchronous Reset:
 
 
 
 
+####ASynchronous Reset:
 
-**ASynchronous Reset and Synchronous Reset:**
+
+
+####ASynchronous set:
 
 
 
 
 
-
-**RTL Diagram:**
-
-
-**Synchronous Reset:**
-
-
-
-**ASynchronous Reset:**
-
-
-
-**ASynchronous set:**
+####ASynchronous Reset and Synchronous Reset:
 
 
 
 
 
-**ASynchronous Reset and Synchronous Reset:**
+
+###RTL Diagram:
+
+
+####Synchronous Reset:
+
+
+
+####ASynchronous Reset:
+
+
+
+####ASynchronous set:
+
+
+
+
+
+####ASynchronous Reset and Synchronous Reset:
 
 
 
