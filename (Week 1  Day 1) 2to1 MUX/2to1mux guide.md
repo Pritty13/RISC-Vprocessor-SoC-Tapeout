@@ -67,6 +67,10 @@ endmodule
 // File: tb_good_mux.v
 
 ```
+```
+
+---
+
 `timescale 1ns / 1ps
 
 module tb_good_mux;
@@ -95,9 +99,16 @@ module tb_good_mux;
 	end
 
 always #75 sel = ~sel;
+
 always #10 i0 = ~i0;
+
 always #55 i1 = ~i1;
+
 endmodule
+```
+
+---
+
 ---
 
 ## Simulation with Icarus Verilog
@@ -131,37 +142,37 @@ gtkwave tb_good_mux.vcd
 
 ### Step-by-Step Yosys Flow
 
-Start Yosys
+**Start Yosys**
 
 yosys
 
-Read the liberty library (Library file loaction can vary)
+**Read the liberty library (Library file loaction can vary)**
 
 read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
 
-Read the Verilog code (file loaction can vary)
+**Read the Verilog code (file loaction can vary)**
 
 read_verilog /home/vsduser/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/good_mux.v
 
-Synthesize the design
+**Synthesize the design**
 
 synth -top good_mux
 
-Technology mapping (Library file loaction can vary)
+**Technology mapping (Library file loaction can vary)**
 
 abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib 
 
-Visualize the gate-level netlist
+**Visualize the gate-level netlist**
 
 show
 
 
 ## Expected Output
-2. **Waveform**
+ **Waveform**
 
 ![mux 2to1 iverilog gtkwave output with code](https://github.com/user-attachments/assets/d03b90d7-ff19-402f-9d4b-71e274cd6501)
 
-3. **RTL Diagram**
+ **RTL Diagram**
 
 ![mux 2to1 iverilog yosys RTL with code](https://github.com/user-attachments/assets/36987b49-f3e6-4626-92b5-3d16545c537e)
 
