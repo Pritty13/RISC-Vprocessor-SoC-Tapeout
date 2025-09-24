@@ -13,7 +13,6 @@ This document (`2to1mux.md`) provides a **complete reference** for designing, si
 * [Simulation with Icarus Verilog](#simulation-with-icarus-verilog)
 * [Waveform Viewing in GTKWave](#waveform-viewing-in-gtkwave)
 * [RTL Synthesis with Yosys](#rtl-synthesis-with-yosys)
-* [Options & Flags](#options--flags)
 * [Expected Output](#expected-output)
 
 
@@ -156,14 +155,6 @@ Visualize the gate-level netlist
 
 show
 
-
-## Options & Flags
-
-* **iverilog**: `-g2012` for SystemVerilog features
-* **gtkwave**: `gtkwave tb_good_mux.vcd` to open waveform
-* **yosys**: `show`, `write_dot` for visualization
-
----
 
 ## Expected Output
 2. **Waveform**
