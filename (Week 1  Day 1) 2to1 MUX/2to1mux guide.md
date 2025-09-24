@@ -126,15 +126,15 @@ sudo apt install gtkwave
 
 ### Step 3: Simulate the Design
 
-Compile the design and testbench:
+**Compile the design and testbench:**
 
 iverilog good_mux.v tb_good_mux.v
 
-Run the simulation:
+**Run the simulation:**
 
 ./a.out
 
-View the waveform:
+**View the waveform:**
 
 gtkwave tb_good_mux.vcd
 
