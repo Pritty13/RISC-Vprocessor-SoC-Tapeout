@@ -107,17 +107,17 @@ sudo apt install gtkwave
 
 ### Step 3: Simulate the Design
 
-**Compile the design and testbench:**
+**Compile the design and testbench:** (file name vary as per type of d-FF)
 
-iverilog good_mux.v tb_good_mux.v
+iverilog asyncres.v tb_asyncres.v
 
 **Run the simulation:**
 
 ./a.out
 
-**View the waveform:**
+**View the waveform:** (file name vary as per type of d-FF)
 
-gtkwave tb_good_mux.vcd
+gtkwave tb_asyncres.vcd
 
 ## RTL diagram generation with Yosys
 
@@ -133,11 +133,11 @@ read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
 
 **Read the Verilog code (file loaction can vary)**
 
-read_verilog /home/vsduser/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/good_mux.v
+read_verilog /home/vsduser/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/asyncres.v
 
 **Synthesize the design**
 
-synth -top good_mux
+synth -top asyncres
 
 **Technology mapping (Library file loaction can vary)**
 
@@ -156,7 +156,6 @@ show
 
 Synchronous Reset:
 
-![Uploading synch reset dff output with code.jpg…]()
 
 ASynchronous Reset:
 
