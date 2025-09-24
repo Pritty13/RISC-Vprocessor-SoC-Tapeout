@@ -152,51 +152,39 @@ show
 ## Expected Output
 
 ```
+## Waveform 
 
-###Waveform:
+Synchronous Reset:
 
-####Synchronous Reset:
+![Uploading synch reset dff output with code.jpg…]()
 
-
-
-
-####ASynchronous Reset:
+ASynchronous Reset:
 
 
-
-####ASynchronous set:
-
+ASynchronous set:
 
 
-
-
-####ASynchronous Reset and Synchronous Reset:
+ASynchronous Reset and Synchronous Reset:
 
 
 
 
+##RTL Diagram
 
 
-###RTL Diagram:
-
-
-####Synchronous Reset:
-
-
-
-####ASynchronous Reset:
+Synchronous Reset:
 
 
 
-####ASynchronous set:
+ASynchronous Reset:
 
 
 
+ASynchronous set:
 
 
-####ASynchronous Reset and Synchronous Reset:
 
-
+ASynchronous Reset and Synchronous Reset:
 
 
 ---
