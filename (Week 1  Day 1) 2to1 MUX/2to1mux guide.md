@@ -15,8 +15,7 @@ This document (`2to1mux.md`) provides a **complete reference** for designing, si
 * [RTL Synthesis with Yosys](#rtl-synthesis-with-yosys)
 * [Options & Flags](#options--flags)
 * [Expected Output](#expected-output)
-* [Troubleshooting](#troubleshooting)
-* [License](#license)
+
 
 ---
 
@@ -24,9 +23,9 @@ This document (`2to1mux.md`) provides a **complete reference** for designing, si
 
 A 2:1 multiplexer selects one of two inputs (`a` or `b`) based on a select signal (`sel`). This design uses a **parameterized Verilog module** so you can easily change the bit-width. We will:
 
-* Write RTL (`mux.v`)
-* Write a testbench (`tb_mux.v`)
-* Simulate using `iverilog` + `vvp`
+* Write RTL (`good_mux.v`)
+* Write a testbench (`tb_good_mux.v`)
+* Simulate using `iverilog`
 * View waveforms in `gtkwave`
 * Synthesize and generate RTL diagrams with `yosys`
 
@@ -34,10 +33,9 @@ A 2:1 multiplexer selects one of two inputs (`a` or `b`) based on a select signa
 
 ## Prerequisites
 
-* **Icarus Verilog** (`iverilog`, `vvp`)
+* **Icarus Verilog** (`iverilog`)
 * **GTKWave** (to view waveforms)
 * **Yosys** (for RTL synthesis)
-* **Graphviz** (optional, for DOT → PNG conversion)
 
 Install (Ubuntu/Debian example):
 
@@ -51,19 +49,14 @@ sudo apt install iverilog gtkwave yosys graphviz -y
 ## Verilog RTL Code
 
 ```verilog
-// File: mux.v
-// 2:1 Multiplexer
-`timescale 1ns/1ps
-
-module mux #(
-    parameter WIDTH = 8
-) (
-    input  wire [WIDTH-1:0] a,
-    input  wire [WIDTH-1:0] b,
-    input  wire             sel,
-    output wire [WIDTH-1:0] y
-);
-    assign y = sel ? b : a;
+module good_mux (input i0 , input i1 , input sel , output reg y);
+always @ (*)
+begin
+	if(sel)
+		y <= i1;
+	else 
+		y <= i0;
+end
 endmodule
 ```
 
@@ -72,87 +65,93 @@ endmodule
 ## Testbench Code
 
 ```verilog
-// File: tb_mux.v
-`timescale 1ns/1ps
+// File: tb_good_mux.v
 
-module tb_mux;
-    parameter WIDTH = 8;
-    reg [WIDTH-1:0] a;
-    reg [WIDTH-1:0] b;
-    reg sel;
-    wire [WIDTH-1:0] y;
-
-    mux #(.WIDTH(WIDTH)) dut (
-        .a(a), .b(b), .sel(sel), .y(y)
-    );
-
-    initial begin
-        $dumpfile("dump.vcd");
-        $dumpvars(0, tb_mux);
-    end
-
-    initial begin
-        a = 8'hAA; b = 8'h55; sel = 0;
-        #5 sel = 1;
-        #10 sel = 0;
-        #5 a = 8'hFF; b = 8'h00;
-        #5 sel = 1;
-        #10 $finish;
-    end
-
-    initial begin
-        $display("time\tsel\ta\tb\ty");
-        $monitor("%0dns\t%b\t%h\t%h\t%h", $time, sel, a, b, y);
-    end
-endmodule
 ```
+`timescale 1ns / 1ps
+module tb_good_mux;
+	// Inputs
+	reg i0,i1,sel;
+	// Outputs
+	wire y;
 
+        // Instantiate the Unit Under Test (UUT)
+	good_mux uut (
+		.sel(sel),
+		.i0(i0),
+		.i1(i1),
+		.y(y)
+	);
+
+	initial begin
+	$dumpfile("tb_good_mux.vcd");
+	$dumpvars(0,tb_good_mux);
+	// Initialize Inputs
+	sel = 0;
+	i0 = 0;
+	i1 = 0;
+	#300 $finish;
+	end
+
+always #75 sel = ~sel;
+always #10 i0 = ~i0;
+always #55 i1 = ~i1;
+endmodule
 ---
 
 ## Simulation with Icarus Verilog
+### Step 1: Clone the Workshop Repository
 
-```bash
-# Compile
-overilog -g2012 -o simv mux.v tb_mux.v
+git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
 
-# Run simulation
-vvp simv
-```
+### Step 2: Install Required Tools
 
-This generates `dump.vcd` for waveform viewing.
+sudo apt install iverilog
+sudo apt install gtkwave
 
----
+### Step 3: Simulate the Design
 
-## Waveform Viewing in GTKWave
+Compile the design and testbench:
 
-Open the VCD file:
+iverilog good_mux.v tb_good_mux.v
 
-```bash
-gtkwave dump.vcd
-```
+Run the simulation:
 
-Drag `a`, `b`, `sel`, and `y` into the waveform viewer. You should see `y` follow `a` when `sel=0` and `b` when `sel=1`.
+./a.out
 
----
+View the waveform:
 
-## RTL Synthesis with Yosys
+gtkwave tb_good_mux.vcd
 
-### Method 1: Inline commands
+## RTL diagram generation with Yosys
 
-```bash
-yosys -p "read_verilog mux.v; prep -top mux; show"
-```
+### Step-by-Step Yosys Flow
 
-### Method 2: Generate DOT + PNG
+Start Yosys
 
-```bash
-yosys -p "read_verilog mux.v; prep -top mux; write_dot mux.dot"
-dot -Tpng mux.dot -o mux.png
-```
+yosys
 
-This produces a block diagram of the MUX.
+Read the liberty library (Library file loaction can vary)
 
----
+read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+Read the Verilog code (file loaction can vary)
+
+read_verilog /home/vsduser/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/good_mux.v
+
+Synthesize the design
+
+synth -top good_mux
+
+Technology mapping (Library file loaction can vary)
+
+abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib 
+
+Visualize the gate-level netlist
+
+show
+
 
 ## Options & Flags
 
@@ -165,21 +164,11 @@ This produces a block diagram of the MUX.
 ## Expected Output
 2. **Waveform**
 
+![mux 2to1 iverilog gtkwave output with code](https://github.com/user-attachments/assets/d03b90d7-ff19-402f-9d4b-71e274cd6501)
 
 3. **RTL Diagram**
 
+![mux 2to1 iverilog yosys RTL with code](https://github.com/user-attachments/assets/36987b49-f3e6-4626-92b5-3d16545c537e)
 
 
-## Troubleshooting
 
-* If `dump.vcd` isn’t generated, check `$dumpfile` and `$dumpvars` in the testbench.
-* Ensure Graphviz (`dot`) is installed if converting `.dot` → `.png`.
-* Expand signals under `tb_mux` in GTKWave to plot them.
-
----
-
-## License
-
-MIT License — free to use and modify for learning or projects.
-
----
