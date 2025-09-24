@@ -69,7 +69,9 @@ endmodule
 
 ```
 `timescale 1ns / 1ps
+
 module tb_good_mux;
+
 	// Inputs
 	reg i0,i1,sel;
 	// Outputs
