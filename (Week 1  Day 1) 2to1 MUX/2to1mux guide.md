@@ -103,11 +103,13 @@ endmodule
 ### Step 1: Clone the Workshop Repository
 
 git clone https://github.com/kunalg123/sky130RTLDesignAndSynthesisWorkshop.git
+
 cd sky130RTLDesignAndSynthesisWorkshop/verilog_files
 
 ### Step 2: Install Required Tools
 
 sudo apt install iverilog
+
 sudo apt install gtkwave
 
 ### Step 3: Simulate the Design
