@@ -157,23 +157,23 @@ show
 
 **Synchronous Reset:**
 
-![synch reset dff output with code](https://github.com/user-attachments/assets/c0105611-20fb-4366-9c40-f168ffe1895c)
+![synch reset dff output with code](https://github.com/user-attachments/assets/9d83f846-53e2-4e6c-ae9c-49e9392b2f33)
 
 
 **ASynchronous Reset:**
 
-![asynch reset dff output with code](https://github.com/user-attachments/assets/0b17f5e9-2cb1-4f09-98ad-29fb775c9553)
 
 
 **ASynchronous set:**
 
 
-![asynch set dff output with code](https://github.com/user-attachments/assets/efbac31e-1d2f-4dc5-b671-2e728aa9074b)
+
 
 
 **ASynchronous Reset and Synchronous Reset:**
 
-![synch reset asynch reset dff output with code](https://github.com/user-attachments/assets/6f0cdad2-915c-4ce6-b403-681f74eae141)
+
+
 
 
 
@@ -182,21 +182,20 @@ show
 
 **Synchronous Reset:**
 
-![synch reset dff RTL with code](https://github.com/user-attachments/assets/8cffeb27-25cb-4a29-84f6-d8574b8caf54)
 
 
 **ASynchronous Reset:**
 
-![asynch reset dff RTL with code](https://github.com/user-attachments/assets/88ed7284-bc6c-4874-872c-836b36905f9d)
+
 
 **ASynchronous set:**
 
-![asynch set dff RTL with code](https://github.com/user-attachments/assets/9298d468-5cd6-46a8-9b89-dc3cda98bb6f)
+
 
 
 
 **ASynchronous Reset and Synchronous Reset:**
-![synch reset asynch reset dff RTL with code](https://github.com/user-attachments/assets/25e0ed37-65ef-4215-aa60-930547aef3ce)
+
 
 
 
