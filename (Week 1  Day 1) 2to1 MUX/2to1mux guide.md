@@ -146,11 +146,11 @@ gtkwave tb_good_mux.vcd
 
 yosys
 
-**Read the liberty library (Library file loaction can vary)**
+**Read the liberty library (Library file location can vary)**
 
 read_liberty -lib /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib
 
-**Read the Verilog code (file loaction can vary)**
+**Read the Verilog code (file location can vary)**
 
 read_verilog /home/vsduser/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_files/good_mux.v
 
@@ -158,7 +158,7 @@ read_verilog /home/vsduser/VLSI/sky130RTLDesignAndSynthesisWorkshop/verilog_file
 
 synth -top good_mux
 
-**Technology mapping (Library file loaction can vary)**
+**Technology mapping (Library file location can vary)**
 
 abc -liberty /address/to/your/sky130/file/sky130_fd_sc_hd__tt_025C_1v80.lib 
 
