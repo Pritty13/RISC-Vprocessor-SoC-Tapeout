@@ -176,17 +176,21 @@ ASynchronous Reset and Synchronous Reset:
 
 Synchronous Reset:
 
+![synch reset asynch reset dff RTL with code](https://github.com/user-attachments/assets/83b3f63c-2ec4-44fa-bfe4-b9e4aea6fb69)
 
 
 ASynchronous Reset:
-
+![asynch reset dff RTL with code](https://github.com/user-attachments/assets/fcbc3a01-58d8-40aa-a965-8fbfccad4dd4)
 
 
 ASynchronous set:
 
-
+![asynch set dff RTL with code](https://github.com/user-attachments/assets/d119535b-5084-4628-81ed-f12555d52cfa)
 
 ASynchronous Reset and Synchronous Reset:
+
+![synch reset asynch reset dff RTL with code](https://github.com/user-attachments/assets/4f16edac-b4aa-4c6d-b1f8-f1cacbb92eaf)
+
 
 
 ---
