@@ -34,13 +34,7 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 
 ## Block Diagram of BabySoC
 
-```mermaid
-graph TD
-    A[RVMYTH Processor<br>(RISC-V Core)] -->|Data & Control| B[Interconnect]
-    B --> C[PLL<br>8x Clock Generator]
-    B --> D[DAC<br>10-bit Digital-to-Analog Converter]
-    C --> B
-    D --> E[Analog Output<br>(e.g., TV, Speaker)]
+
 ```
 
 ---
@@ -76,12 +70,9 @@ graph TD
 
 Functional modelling happens before RTL and physical design.
 
-```mermaid
-flowchart LR
-    A[Functional Modelling<br>(C++/SystemC)] --> B[RTL Design<br>(Verilog/VHDL)]
-    B --> C[Simulation & Verification]
-    C --> D[Physical Design<br>(Layout & Fabrication)]
-```
+Image For SoC modelling
+
+
 
 **Key Benefits**
 
