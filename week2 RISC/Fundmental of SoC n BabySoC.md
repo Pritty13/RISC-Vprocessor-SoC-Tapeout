@@ -81,8 +81,8 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 ---
 
 ```
-## Role of Functional Modelling in SoC Design
 
+## Role of Functional Modelling in SoC Design
 
 ```
 Functional modelling happens before RTL and physical design.
