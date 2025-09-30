@@ -92,9 +92,9 @@ Functional modelling happens before RTL and physical design.
 Image For SoC modelling
 ```
 
-
-**Key Benefits**
 ```
+**Key Benefits**
+
 * System-level validation
 
 * Early design exploration
@@ -109,7 +109,7 @@ Image For SoC modelling
 *In BabySoC:* Validates RVMYTH execution, PLL timing, and DAC conversion before RTL implementation.
 
 
----
+```
 
 ## BabySoC in the Learning Journey
 
