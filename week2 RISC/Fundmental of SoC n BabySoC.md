@@ -65,7 +65,7 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 * Limited flexibility
 ```
 ---
-
+```
 ## Why BabySoC is a Simplified Model for Learning
 
 ```
@@ -80,7 +80,7 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 ```
 ---
 
-
+```
 ## Role of Functional Modelling in SoC Design
 
 
