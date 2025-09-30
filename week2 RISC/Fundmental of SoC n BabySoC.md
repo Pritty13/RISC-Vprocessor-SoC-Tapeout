@@ -45,15 +45,21 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 **Advantages**
 ```
 * Compact and integrated
+  
 * Energy-efficient
+  
 * Cost-effective
+  
 * High performance
+  
 * Reliable
 ```
 **Challenges**
 ```
 * Complex design
+  
 * Heat management issues
+  
 * Limited flexibility
 ```
 ---
@@ -61,9 +67,13 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 ## Why BabySoC is a Simplified Model for Learning
 ```
 * **Reduced Complexity:** Only 3 IPs (RVMYTH, PLL, DAC).
+  
 * **Open-Source:** Built with RISC-V and Sky130.
+  
 * **Digital-Analog Integration:** Learners practice mixed-signal design.
+  
 * **Practical Learning:** Hands-on with processor, clocking, and DAC.
+  
 ```
 ---
 
@@ -78,23 +88,30 @@ Image For SoC modelling
 **Key Benefits**
 ```
 * System-level validation
+
 * Early design exploration
+
 * Error detection
+
 * Performance estimation
+
 * Easier debugging
+
 ```
 *In BabySoC:* Validates RVMYTH execution, PLL timing, and DAC conversion before RTL implementation.
+
 
 ---
 
 ## BabySoC in the Learning Journey
 ```
 * **Hands-On Experience:** Work with RVMYTH, PLL, DAC.
+
 * **Design Flow Exposure:** From functional modelling to RTL and physical design.
+
 * **Mixed-Signal Understanding:** Digital-to-analog interfacing concepts.
+
 ```
 ---
 
-## Conclusion
-```
 BabySoC offers a minimal yet complete SoC, combining a **RISC-V CPU, PLL, and DAC** into an open-source educational platform. Its simplicity, diagrams, and functional modelling flow make it an excellent starting point for anyone exploring modern SoC design.
