@@ -42,7 +42,6 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 
 ## Advantages and Challenges of SoCs
 ```
-
 **Advantages**
 ```
 
@@ -56,7 +55,6 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
   
 * Reliable
 ```
-
 **Challenges**
 
 ```
@@ -69,6 +67,7 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 ---
 
 ## Why BabySoC is a Simplified Model for Learning
+
 ```
 * **Reduced Complexity:** Only 3 IPs (RVMYTH, PLL, DAC).
   
