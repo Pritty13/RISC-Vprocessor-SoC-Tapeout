@@ -11,7 +11,7 @@ This repository documents my week-by-week progress with tasks inside each week.
 | Task 2/ week 1/Day2| D- flip Flop output waveform and RTL diagram(gtkwave & yosys) (Week 1  Day 2)     [RISC-Vprocessor-SoC-Tapeout/(Week 1 Day 2) D- Flip Flop (Synch Asynch Set Reset)/D-Flip flop guide.md]|Done   |
 | Task 3/ week 1/Day3| Opt_check single / multiple, counter_opt, counter_opt2, dff_const4, dff_const5 |Done   |
 | Task 4/ week 1/Day4|Blocking and non-blocking statements for GLS, Synthesis-simulation Mismatch|Done   |
-| Task 5/ week 1/Day5|Conditional and cases|Done   |
+| Task 5/ week 1/Day5|Conditional and cases (complete, incomplete, bad, partial assign)|Done   |
 | Task 6 / week 2|SoC and Baby SoC [https://github.com/Pritty13/RISC-Vprocessor-SoC-Tapeout/tree/Pritty13-Week2-SoC-RISC-V-Processor]|Done |
 
 **Key Learnings from Week 0**
