@@ -15,7 +15,7 @@ This repository documents my week-by-week progress with tasks inside each week.
 | Task 6 / week 2|SoC and Baby SoC [https://github.com/Pritty13/RISC-Vprocessor-SoC-Tapeout/tree/Pritty13-Week2-SoC-RISC-V-Processor]|Done |
 
 
-**Key Learnings from Week 0**
+**Key Learnings from Week 0 (Installation)**
 
     Installed and verified open-source EDA tools successfully.
     Learned about basic environment setup for RTL design and synthesis.
