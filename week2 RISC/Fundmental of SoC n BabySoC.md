@@ -42,8 +42,10 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 
 ## Advantages and Challenges of SoCs
 ```
+
 **Advantages**
 ```
+
 * Compact and integrated
   
 * Energy-efficient
@@ -54,7 +56,9 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
   
 * Reliable
 ```
+
 **Challenges**
+
 ```
 * Complex design
   
@@ -78,8 +82,10 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 ---
 
 ## Role of Functional Modelling in SoC Design
+
 ```
 Functional modelling happens before RTL and physical design.
+
 ```
 Image For SoC modelling
 ```
