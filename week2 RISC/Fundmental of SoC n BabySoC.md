@@ -46,22 +46,22 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 ```
 
 * Compact and integrated
-  
+  ```
 * Energy-efficient
-  
+```  
 * Cost-effective
-  
+  ```
 * High performance
-  
+  ```
 * Reliable
 ```
 **Challenges**
 
 ```
 * Complex design
-  
+  ```
 * Heat management issues
-  
+  ```
 * Limited flexibility
 ```
 ---
@@ -70,11 +70,11 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 
 ```
 * **Reduced Complexity:** Only 3 IPs (RVMYTH, PLL, DAC).
-  
+  ```
 * **Open-Source:** Built with RISC-V and Sky130.
-  
+  ```
 * **Digital-Analog Integration:** Learners practice mixed-signal design.
-  
+  ```
 * **Practical Learning:** Hands-on with processor, clocking, and DAC.
   
 ```
