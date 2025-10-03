@@ -37,6 +37,7 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 ```mermaid
 
 ```
+<img width="1536" height="1024" alt="BabySoC Architecture Block Diagram" src="https://github.com/user-attachments/assets/60272b27-e2cf-4502-b3af-730fd3d31eaa" />
 
 ---
 
@@ -72,6 +73,7 @@ A **System-on-Chip (SoC)** is an integrated circuit that combines multiple compu
 Functional modelling happens before RTL and physical design.
 
 ```mermaid
+<img width="1024" height="1536" alt="SoC Design and Fabrication Process" src="https://github.com/user-attachments/assets/e2896b1e-d061-4ba8-9074-677ac0f1a236" />
 
 ```
 
