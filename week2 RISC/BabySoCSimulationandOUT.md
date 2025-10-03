@@ -148,3 +148,6 @@ GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
 ![babySoC Output with code](https://github.com/user-attachments/assets/0c477077-ac08-4ef7-a92a-6301b358a58b)
 
 
+# Short Explanation for Baby SoC:
+
+
