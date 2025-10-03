@@ -54,7 +54,15 @@ Preprocessor failed with 1 errors.
 pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsddac_interface/iverilog/Pre-synthesis$ ls
 a.out        avsddac_tb_test.v    avsddac.v   mythcore_test_gen.v  pseudo_rand_gen.sv  rvmyth_avsddac_TB.v  rvmyth_avsddac.vcd  sandpiper.vh   sp_verilog.vh       tb_mythcore_test.vcd
 avsddac.lib  avsddac_tb_test.vcd  clk_gate.v  mythcore_test.v      pseudo_rand.sv      rvmyth_avsddac.v     sandpiper_gen.vh    sp_default.vh  tb_mythcore_test.v  verilog_to_lib.pl
+
 pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsddac_interface/iverilog/Pre-synthesis$ iverilog rvmyth_avsddac.v rvmyth_avsddac_TB.v
+
+pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsddac_interface/iverilog/Pre-synthesis$ ./a.out
+
+VCD info: dumpfile avsddac_tb_test.vcd opened for output.
+avsddac_tb_test.v:41: $finish called at 300000 (1ps)
+
+pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsddac_interface/iverilog/Pre-synthesis$ gtkwave avsddac_tb_test.vcd
 
 GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
 
@@ -62,32 +70,48 @@ GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
 ## PLL Simulation code : 
 
 pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsddac_interface/iverilog/Pre-synthesis$ cd /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsdpll_interface/verilog
+
 pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsdpll_interface/verilog$ iverilog avsd_pll_1v8.v pll_tb.v
+
 pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsdpll_interface/verilog$ ./a.out
+
 VCD info: dumpfile test.vcd opened for output.
 pll_tb.v:59: $finish called at 56666000 (1ps)
+
 pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsdpll_interface/verilog$ gtkwave test.vcd
 
-pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsddac_interface/iverilog/Pre-synthesis$ ./a.out
-VCD info: dumpfile avsddac_tb_test.vcd opened for output.
-avsddac_tb_test.v:41: $finish called at 300000 (1ps)
-pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsddac_interface/iverilog/Pre-synthesis$ gtkwave avsddac_tb_test.vcd
-
 GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+
 
 ## RVMYTH and PLL integration Simulation code : 
 
 pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsdpll_interface/verilog$ iverilog rvmyth_pll.v rvmyth_pll_tb.v
+
 pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsdpll_interface/verilog$ ./a.out
+
 VCD info: dumpfile test1.vcd opened for output.
 rvmyth_pll_tb.v:60: $finish called at 56666000 (1ps)
+
 pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rvmyth_avsdpll_interface/verilog$ gtkwave test1.vcd
 
 GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
 
-# OUTPUT BabySoc:
+# OUTPUT Waveforms BabySoc:
 
 ## RVMYTH
+
+
+## DAC
+
+
+## PLL
+
+
+## RVMYTH and PLL
+
+
+
+## RVMYTH and DAC
 
 
 
