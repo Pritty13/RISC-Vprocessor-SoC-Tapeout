@@ -77,8 +77,6 @@ Functional modelling happens before RTL and physical design.
 <img width="1024" height="1536" alt="SoC Design and Fabrication Process" src="https://github.com/user-attachments/assets/c54826a6-0181-4cf4-9679-8064c4b0afc9" />
 
 
-```
-
 **Key Benefits**
 
 * System-level validation
