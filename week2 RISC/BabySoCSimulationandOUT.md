@@ -96,6 +96,27 @@ pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/rv
 
 GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
 
+## BabySoC Simulation Code:
+
+pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module$ cd ~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC
+
+pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC$ ls
+images  LICENSE  Makefile  output  README.md  src
+
+pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC$ make pre_synth_sim
+if [ ! -f "output/pre_synth_sim/pre_synth_sim.vcd" ]; then \
+	mkdir -p output/pre_synth_sim; \
+	iverilog -o output/pre_synth_sim/pre_synth_sim.out -DPRE_SYNTH_SIM \
+		src/module/testbench.v \
+		-I src/include -I src/module -I output/compiled_tlv; \
+	cd output/pre_synth_sim; ./pre_synth_sim.out; \
+fi
+
+pritty@PrittyRISC-V:~/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC$  gtkwave output/pre_synth_sim/pre_synth_sim.vcd
+
+GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+
+
 # OUTPUT Waveforms BabySoc:
 
 ## RVMYTH
