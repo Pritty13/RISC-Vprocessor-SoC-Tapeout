@@ -25,18 +25,15 @@ It checks **all possible timing paths** in a design to ensure the circuit meets 
 ### ✅ **Setup Check**
 Ensures data arrives **before** the capturing clock edge.
 
-\[
-T_{clk} \geq T_{clk\_q} + T_{comb} + T_{setup}
-\]
+Tclk ≥ Tclk_q + Tcomb + Tsetup
+
 
 - **Violation:** Data is **late** → incorrect value may be captured.
 
 ### ✅ **Hold Check**
 Ensures data remains stable **after** the clock edge.
 
-\[
-T_{clk\_q} + T_{comb} \geq T_{hold}
-\]
+Tclk_q + Tcomb ≥ Thold
 
 - **Violation:** Data changes **too early** → capturing invalid data.
 
@@ -94,7 +91,7 @@ STA examines all **register-to-register** or **I/O** paths for timing violations
 Each path is checked separately for **setup** and **hold** timing.
 
 ---
-### Steps for timming analysis:
+### Steps for timing analysis:
 1. Convert Logic Gates into nodes
 2. Compute Actual Arrival Time (AAT), Required Arrival Time (RAT), Slack (s)
 3. Convert pins to nodes, then Compute Actual Arrival Time (AAT), Required Arrival Time (RAT), Slack (s)
