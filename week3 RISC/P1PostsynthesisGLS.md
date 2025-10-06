@@ -1,0 +1,70 @@
+# BabySoC Gate-Level Simulation (GLS) – Post-Synthesis
+
+---
+
+## Purpose of GLS
+
+Gate-Level Simulation (GLS) is used to **verify the functionality of a design after the synthesis process**. Unlike behavioral or RTL (Register Transfer Level) simulations, which operate at a higher abstraction level, GLS works on the **netlist generated post-synthesis**, which includes the actual gates and interconnections used to implement the design.
+
+---
+
+## Key Aspects of GLS for BabySoC
+
+### 1. Verification with Timing Information
+- GLS is performed using **Standard Delay Format (SDF) files** to ensure timing correctness.
+- Ensures that the SoC behaves correctly under **real-world timing constraints**.
+
+### 2. Design Validation Post-Synthesis
+- Confirms that the design's **logical behavior** remains correct after mapping it to the gate-level representation.
+- Ensures the design is free from issues like **metastability or glitches**.
+
+### 3. Simulation Tools
+- Tools like **Icarus Verilog** (iverilog) or similar simulators are used to compile and run the gate-level netlist.
+- Waveforms are typically analyzed using **GTKWave**.
+
+### 4. Importance for BabySoC
+- BabySoC consists of multiple modules like the **RISC-V processor, PLL, and DAC**.
+- GLS ensures these modules **interact correctly** and meet **timing requirements** in the synthesized design.
+
+---
+
+## Step-by-Step Execution Plan
+
+### Step 1: Load the Top-Level Design and Supporting Modules in Yosys
+
+```tcl
+yosys
+
+# Read top-level RTL and modules
+read_verilog /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/vsdbabysoc.v
+read_verilog -I /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/rvmyth.v
+read_verilog -I /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/clk_gate.v
+
+# Read standard cell and IP libraries
+read_liberty -lib /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/avsdpll.lib
+read_liberty -lib /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/avsddac.lib
+read_liberty -lib /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Synthesize the top-level design
+synth -top vsdbabysoc
+
+# Map D flip-flops to library
+dfflibmap -liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# Technology mapping and optimization
+abc -liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib \
+    -script +strash;scorr;ifraig;retime;{D};strash;dch,-f;map,-M,1,{D}
+
+# Flatten hierarchy and clean design
+flatten
+setundef -zero
+clean -purge
+rename -enumerate
+
+# Get design statistics
+stat
+
+# Write post-synthesis Verilog netlist
+write_verilog -noattr /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/output/post_synth_sim/vsdbabysoc.synth.v
+
+
