@@ -30,41 +30,63 @@ Gate-Level Simulation (GLS) is used to **verify the functionality of a design af
 
 ## Step-by-Step Execution Plan
 
-### Step 1: Load the Top-Level Design and Supporting Modules in Yosys
+### 1. Load the Top-Level Design and Supporting Modules in Yosys
 
 ```tcl
 yosys
+```
 
-# Read top-level RTL and modules
+### 2. Read top-level RTL and modules
+```
 read_verilog /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/vsdbabysoc.v
 read_verilog -I /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/rvmyth.v
 read_verilog -I /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/clk_gate.v
-
-# Read standard cell and IP libraries
+```
+### 3. Read standard cell and IP libraries
+```
 read_liberty -lib /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/avsdpll.lib
 read_liberty -lib /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/avsddac.lib
 read_liberty -lib /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-
-# Synthesize the top-level design
+```
+### 4. Synthesize the top-level design
+```
 synth -top vsdbabysoc
-
-# Map D flip-flops to library
+```
+### 5. Map D flip-flops to library
+```
 dfflibmap -liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
-
-# Technology mapping and optimization
+```
+### 6. Technology mapping and optimization
+```
 abc -liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib \
     -script +strash;scorr;ifraig;retime;{D};strash;dch,-f;map,-M,1,{D}
-
-# Flatten hierarchy and clean design
+```
+### 7. Flatten hierarchy and clean design
+```
 flatten
 setundef -zero
 clean -purge
 rename -enumerate
-
-# Get design statistics
+```
+### 8. Get design statistics
+```
 stat
-
-# Write post-synthesis Verilog netlist
+```
+### 9. Write post-synthesis Verilog netlist
+```
 write_verilog -noattr /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/output/post_synth_sim/vsdbabysoc.synth.v
 
+```
 
+## 1.  Compile the Gate-Level Netlist with Icarus Verilog
+```
+iverilog -o /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/include -I /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd.v /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/primitives.v  /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/testbench.v
+```
+## 2. Run the Simulation
+```
+cd /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/output/post_synth_sim/
+```
+## 3. Simulation waveforms can be viewed using GTKWave:
+```
+./post_synth_sim.out
+```
