@@ -36,6 +36,7 @@ Gate-Level Simulation (GLS) is used to **verify the functionality of a design af
 yosys
 ```
 
+
 ### 2. Read top-level RTL and modules
 ```
 read_verilog /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/vsdbabysoc.v
@@ -77,7 +78,7 @@ stat
 write_verilog -noattr /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/output/post_synth_sim/vsdbabysoc.synth.v
 
 ```
-
+# POST_SYNTHESIS SIMULATION AND WAVEFORMS
 ## 1.  Compile the Gate-Level Netlist with Icarus Verilog
 ```
 iverilog -o /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/include -I /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd.v /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/primitives.v  /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/testbench.v
