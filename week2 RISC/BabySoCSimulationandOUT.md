@@ -150,4 +150,6 @@ GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
 
 # Short Explanation for Baby SoC:
 
+The BabySoC successfully demonstrates the integration of its three core components—RVMYTH processor, PLL, and 10-bit DAC. Simulation and synthesis results confirm correct processor operation, stable clock generation, and accurate digital-to-analog conversion. The functional model and RTL outputs validate data flow, timing synchronization, and signal conversion, showcasing a working miniature SoC that effectively bridges digital processing and analog interfacing—proving BabySoC as a reliable educational SoC prototype.
+
 
