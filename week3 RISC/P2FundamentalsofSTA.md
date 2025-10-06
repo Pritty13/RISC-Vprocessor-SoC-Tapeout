@@ -77,11 +77,27 @@ STA examines all **register-to-register** or **I/O** paths for timing violations
 1. **Register-to-Register (Sequential)**  
 2. **Input-to-Register**  
 3. **Register-to-Output**  
-4. **Input-to-Output (Combinational)**  
+4. **Input-to-Output (IN -- OUT)**
+5. **Clock Gating (Another_clk to clkc)**
+6. **Recovery / Removal (Another_clk to RSTc)**
+7. **Data-To-Data Check**
+8. **Latch Timing (Time given / Borrow)**
+
+### Skew Analysis 
+1.  **Data (Max /Min)**
+2.   **Clock (max / min)**
+
+### Load Analysis 
+1.  **FANOUT (Max /Min)**
+2.   **Capcitance (max / min)** 
 
 Each path is checked separately for **setup** and **hold** timing.
 
 ---
+### Steps for timming analysis:
+1. Convert Logic Gates into nodes
+2. Compute Actual Arrival Time (AAT), Required Arrival Time (RAT), Slack (s)
+3. Convert pins to nodes, then Compute Actual Arrival Time (AAT), Required Arrival Time (RAT), Slack (s)
 
 ## 💡 Why STA Matters
 
