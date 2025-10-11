@@ -29,9 +29,9 @@ Follow these steps to load your synthesized design, perform STA, and generate ti
 Load the technology library and synthesized gate-level netlist:
 
 ```tcl
+% read_liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+% read_verilog /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/vsdbabysoc.synth.v
 
-read_liberty /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog /path/to/vsdbabysoc.synth.v
 
 ```
 
@@ -39,27 +39,30 @@ read_verilog /path/to/vsdbabysoc.synth.v
 
 Provide clock and I/O timing information:
 ```
-read_sdc /path/to/constraints.sdc
+read_sdc /path/to/constraints.sdc (optional)
 ```
 
 ### 3. Link the Design
 Link all design components for timing analysis:
 ```
-link_design vsdbabysoc
+% link_design vsdbabysoc
 ```
 
 ### 6. Generate Timing Reports
 
 Run STA to analyze setup and hold timing checks:
 ```
-report_checks -path full -fields {slew cap delay time slack} -digits 3 > timing_report.txt
-report_tns
-report_wns
+% report_checks -path full -path_delay max -fields {slew cap delay time slack} -digits 3 > /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/output/post_synth_sim/timing_report.txt
+% report_tns
+% report_wns
 ```
 ### 5. Generate and Export Timing Graphs
 
 Visualize timing paths and export timing data:
+
 ```
+% report_checks -path full -path_delay max -fields {delay time slack} -digits 3 > /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/output/post_synth_sim/setup_report.txt
+% report_checks -path full -path_delay min -fields {delay time slack} -digits 3 > /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/output/post_synth_sim/hold_report.txt
 report_timing -max_paths 10 -delay max
 report_timing -max_paths 10 -delay min
 ```
