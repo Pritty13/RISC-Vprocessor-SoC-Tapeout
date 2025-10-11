@@ -73,5 +73,5 @@ write_dot_timing_graph timing_graph.dot
 ```
 You can view .dot files using Graphviz or any online DOT graph viewer.
 ```
-read_liberty /path/to/sky130_fd_sc_hd__tt_025C_1v80.lib
-read_verilog /path/to/vsdbabysoc.synth.v
+% read_liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+% read_verilog /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/vsdbabysoc.synth.v
