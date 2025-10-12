@@ -39,7 +39,7 @@ Load the technology library and synthesized gate-level netlist:
 
 Provide clock and I/O timing information:
 ```
-read_sdc /path/to/constraints.sdc (optional)
+read_sdc 
 ```
 
 ### 3. Link the Design
@@ -66,10 +66,16 @@ Visualize timing paths and export timing data:
 report_timing -max_paths 10 -delay max
 report_timing -max_paths 10 -delay min
 ```
+# Timing Report
+![Timing_report STA 1](https://github.com/user-attachments/assets/395a9936-7309-427b-a547-8a89fb1637ca)
+# Hold Report:
+![Timing_report hold STA 2](https://github.com/user-attachments/assets/60522fcb-1c49-4832-aefd-74edeca1dc4f)
+# Setup report:
+![Timing_report setup STA 3](https://github.com/user-attachments/assets/d1c26b30-c89f-45dd-a1a9-feb0f38b51aa)
 
 Optional – export a graph view of timing paths:
 ```
-write_dot_timing_graph timing_graph.dot
+write_dot_timing_graph timing_graph.dot (does not work with latest version of Open STA)
 ```
 You can view .dot files using Graphviz or any online DOT graph viewer.
 ```
