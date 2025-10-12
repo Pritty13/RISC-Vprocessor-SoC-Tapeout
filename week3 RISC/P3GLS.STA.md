@@ -29,7 +29,10 @@ Follow these steps to load your synthesized design, perform STA, and generate ti
 Load the technology library and synthesized gate-level netlist:
 
 ```tcl
-% read_liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+% read_liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+% read_liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/avsddac.lib                       
+% read_liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/avsdpll.lib
+
 % read_verilog /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/vsdbabysoc.synth.v
 
 
@@ -39,7 +42,7 @@ Load the technology library and synthesized gate-level netlist:
 
 Provide clock and I/O timing information:
 ```
-read_sdc 
+% read_sdc /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/sdc/vsdbabysoc_synthesis.sdc
 ```
 
 ### 3. Link the Design
