@@ -70,11 +70,13 @@ report_timing -max_paths 10 -delay max
 report_timing -max_paths 10 -delay min
 ```
 # Timing Report
-![Timing_report STA 1](https://github.com/user-attachments/assets/395a9936-7309-427b-a547-8a89fb1637ca)
+![Timing_report STA 1](https://github.com/user-attachments/assets/73348bdc-fa17-47cf-9683-e9c6353bdcc0)
+
 # Hold Report:
-![Timing_report hold STA 2](https://github.com/user-attachments/assets/60522fcb-1c49-4832-aefd-74edeca1dc4f)
+![Timing_report hold STA 2](https://github.com/user-attachments/assets/0ef45ba2-7784-4158-9301-25ade3b1ac7f)
+
 # Setup report:
-![Timing_report setup STA 3](https://github.com/user-attachments/assets/d1c26b30-c89f-45dd-a1a9-feb0f38b51aa)
+![Timing_report setup STA 3](https://github.com/user-attachments/assets/20de2cb6-51cd-4384-b326-2e356ed7c86f)
 
 Optional – export a graph view of timing paths:
 ```
