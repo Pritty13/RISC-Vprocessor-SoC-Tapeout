@@ -1,4 +1,4 @@
-# Week 3 – Post-Synthesis GLS & STA Fundamentals  
+# Week 3 – CMOS Circuit Design 
 ## Deliverables Report (Following Sky130 Workshop Format)
 
 ---
