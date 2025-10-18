@@ -1,4 +1,4 @@
-# BabySoC Gate-Level Simulation (GLS) – Post-Synthesis
+# Part 1 : BabySoC Gate-Level Simulation (GLS) – Post-Synthesis
 
 ---
 
