@@ -94,8 +94,8 @@ You will carry out a sequence of CMOS design and SPICE simulation activities, mi
 | :--------- | :---------------- | :----- | :------------- |
 | Id vs Vds  | Threshold Voltage | Vth    | ≈ 0.74 V       |
 | VTC        | Switching Point   | Vm     | ≈ 0.0.87 V     |
-| VTC        | Noise Margin Low  | NM_L   | ≈ 0.35 V       |
-| VTC        | Noise Margin High | NM_H   | ≈ 0.42 V       |
+| VTC        | Noise Margin Low  | NM_L   | ≈ 0.659 V       |
+| VTC        | Noise Margin High | NM_H   | ≈ 0.33 V       |
 | Transient  | Rise Delay        | tpLH   | ≈ 1.78 ns (Wp/Lp = 2.3 Wn/Ln)       |
 | Transient  | Fall Delay        | tpHL   | ≈ 878 ns   (Wp/Lp = 2.3 Wn/Ln)      |
 | Variation  | ΔSwitching Point  | ΔVm    | ± 50 mV        |
