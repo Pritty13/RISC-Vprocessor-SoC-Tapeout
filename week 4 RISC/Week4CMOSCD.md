@@ -109,7 +109,7 @@ You will carry out a sequence of CMOS design and SPICE simulation activities, mi
 Current increases linearly and then saturates as Vds rises.  
 
 **Reason:**  
-Transition from linear to saturation region occurs when \( V_{ds} \geq V_{gs} - V_{th} \).  
+Transition from linear to saturation region occurs when Vds ≥ (Vgs - Vth).  
 
 **STA Tie-in:**  
 Transistor current strength directly influences **cell delay models** in STA.
