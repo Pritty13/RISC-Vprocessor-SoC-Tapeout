@@ -5,8 +5,7 @@
 ## 1. Introduction / Background  
 
 ### Why This Task Matters  
-This task deepens your understanding of how **transistor-level circuit properties** — such as device physics, sizing, and variation — drive the **timing behavior** that Static Timing Analysis (STA) evaluates.  
-By working through **CMOS design** and **SPICE simulations** (as in the Sky130 workshop), you will see the *real transistor-level behavior* that STA models approximate.  
+This task deepens your understanding of working through **CMOS design** and **SPICE simulations** (as in the Sky130 workshop), you will see the *real transistor-level behavior* that STA models approximate.  
 This strengthens your intuition about **slack**, **delay**, **noise margins**, and **variation impacts** in digital design.
 
 ---
