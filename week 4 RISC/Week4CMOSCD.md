@@ -82,12 +82,35 @@ You will carry out a sequence of CMOS design and SPICE simulation activities, mi
 | Figure      | Description             | Annotations                                       |
 | :---------- | :---------------------- | :------------------------------------------------ |
 | **Fig 3.1** | Id vs Vds plot          | Mark saturation onset region.                     |
-| **Fig 3.2** | VTC curve (Vout vs Vin) | Label switching point, NM_H, NM_L.                |
-| **Fig 3.3** | Transient waveform      | Mark rise/fall edges, delay points.               |
-| **Fig 3.4** | VTC under variation     | Show shifts in switching point and noise margins. |
+| **Fig 3.2** | Id vs Vgs plot (Long channel and short channel) | Thresold voltage          |
+| **Fig 3.3** | VTC curve (Vout vs Vin) | Label switching point, NM_H, NM_L.                |
+| **Fig 3.4** | Transient waveform      | Mark rise/fall edges, delay points.               |
+| **Fig 3.5** | VTC under variation     | Show shifts in switching point and noise margins. |
 
+![Id- Vds nfet w 0 39 l 0 15](https://github.com/user-attachments/assets/510b29a6-2505-4dde-a799-3bf96a201d78)
+![Id- Vds nfet w 0 65 l  0 25](https://github.com/user-attachments/assets/f348d05b-9578-49bd-b921-739e90688c7a)
 
+**Fig 3.1 Id vs Vds**
 
+![Id- Vgs nfet w 0 39 l 0 15 LIN+Quad short channel](https://github.com/user-attachments/assets/9d1fd9eb-051e-4d7c-931b-54ca6dd00c9a)
+![Id- Vgs nfet w 1 95 l 1 2 quad long channel](https://github.com/user-attachments/assets/33417716-fb22-4bfc-bf48-f6e901b913a3)
+
+**Fig 3.2 Id vs Vgs (Long channel and short channel)**
+
+![InvCMOSvtc Wp084 Wn036](https://github.com/user-attachments/assets/7f3ecd88-9905-4a6b-a275-7e883965ee8a)
+
+ ![InvCMOS NM Wp1 Wn036](https://github.com/user-attachments/assets/5b6982f2-74e8-4b11-bb24-6525cf8de6f1)
+
+ **Fig 3.3  VTC curve (Vout vs Vin) (Long channel and short channel)**
+
+ ![InvCMOS trans Wp084 Wn036](https://github.com/user-attachments/assets/3e8eab5d-e953-4bed-97e3-4a2e64f25d80)
+
+ **Fig 3.4 Transient waveform**
+
+![InvCMOS Supply variations Wp1 Wn036](https://github.com/user-attachments/assets/f32809f4-adef-4db6-ad02-00751d350971)
+
+ **Fig 3.5 VTC under variation**
+ 
 ## 4. Tabulated Results
 
 | Experiment | Parameter         | Symbol | Measured Value |
