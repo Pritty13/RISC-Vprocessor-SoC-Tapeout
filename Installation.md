@@ -57,3 +57,10 @@ $ sudo apt install gtkwave
 
 
 ![gtkwave install](https://github.com/user-attachments/assets/13abd841-7aba-440d-bd6a-62997ea80f3c)
+
+# ngspice
+
+
+![ngspice install](https://github.com/user-attachments/assets/eed7267c-7a8a-426a-b51c-b3e80400cd69)
+
+
