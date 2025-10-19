@@ -1,0 +1,88 @@
+#  Part 3 – Generate Timing Graphs with OpenSTA
+
+---
+
+##  Objectives
+
+1. Perform **Gate-Level Simulation (GLS)** and validate **functional correctness** post-synthesis.  
+2. Gain basic **Static Timing Analysis (STA)** knowledge.  
+3. Generate **timing graphs using OpenSTA** and interpret **timing paths**.
+
+---
+
+##  About OpenSTA
+
+**OpenSTA** is an open-source **Static Timing Analysis (STA)** tool developed under the **OpenROAD Project**.  
+It helps engineers verify and analyze the timing performance of synthesized netlists, ensuring designs meet setup and hold time constraints.
+
+-  **GitHub:** [The OpenROAD Project / OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA)
+-  **Documentation:** [OpenSTA User Guide (PDF)](https://github.com/The-OpenROAD-Project/OpenSTA/blob/master/doc/OpenSTA.pdf)
+-  **Example Script (Day 19 Reference):** [VSD HDP Workshop Example](https://github.com/arunkpv/vsd-hdp/blob/main/docs/Day_19.md)
+
+---
+
+##  Steps to Perform Timing Analysis Using OpenSTA
+
+Follow these steps to load your synthesized design, perform STA, and generate timing graphs.
+
+### 1. Load Synthesized Netlist and Libraries
+Load the technology library and synthesized gate-level netlist:
+
+```tcl
+% read_liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+% read_liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/avsddac.lib                       
+% read_liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/avsdpll.lib
+
+% read_verilog /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/vsdbabysoc.synth.v
+
+
+```
+
+### 2. Load Timing Constraints
+
+Provide clock and I/O timing information:
+```
+% read_sdc /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/sdc/vsdbabysoc_synthesis.sdc
+```
+
+### 3. Link the Design
+Link all design components for timing analysis:
+```
+% link_design vsdbabysoc
+```
+
+### 6. Generate Timing Reports
+
+Run STA to analyze setup and hold timing checks:
+```
+% report_checks -path full -path_delay max -fields {slew cap delay time slack} -digits 3 > /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/output/post_synth_sim/timing_report.txt
+% report_tns
+% report_wns
+```
+### 5. Generate and Export Timing Graphs
+
+Visualize timing paths and export timing data:
+
+```
+% report_checks -path full -path_delay max -fields {delay time slack} -digits 3 > /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/output/post_synth_sim/setup_report.txt
+% report_checks -path full -path_delay min -fields {delay time slack} -digits 3 > /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/output/post_synth_sim/hold_report.txt
+report_timing -max_paths 10 -delay max
+report_timing -max_paths 10 -delay min
+```
+# Timing Report
+![Timing_report STA 1](https://github.com/user-attachments/assets/73348bdc-fa17-47cf-9683-e9c6353bdcc0)
+
+# Hold Report:
+![Timing_report hold STA 2](https://github.com/user-attachments/assets/0ef45ba2-7784-4158-9301-25ade3b1ac7f)
+
+# Setup report:
+![Timing_report setup STA 3](https://github.com/user-attachments/assets/20de2cb6-51cd-4384-b326-2e356ed7c86f)
+
+Optional – export a graph view of timing paths:
+```
+write_dot_timing_graph timing_graph.dot (does not work with latest version of Open STA)
+```
+You can view .dot files using Graphviz or any online DOT graph viewer.
+```
+% read_liberty /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+% read_verilog /home/pritty/vsdpritty/sky130RTLDesignAndSynthesisWorkshop/RISCV_SOC/VSDBabySoC/src/module/vsdbabysoc.synth.v
