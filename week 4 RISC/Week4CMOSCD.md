@@ -25,29 +25,32 @@ The workshop will be available on the **VSDIAT platform**, providing a hands-on 
 You will carry out a sequence of CMOS design and SPICE simulation activities, mirroring the workflow in the Sky130 repository.
 
 #### 1. MOSFET Behavior & Id vs. Vds Characteristics  
-- Simulate an **NMOS device**, sweeping \( V_{DS} \) for different \( V_{GS} \) values.  
+- Simulate an NMOS device, sweeping Vds for different Vgs values.   
 - Observe **linear** and **saturation** regions of operation.  
-- Plot \( I_D \) vs. \( V_{DS} \) curves.
+- Plot Id vs. Vds curves.
 
 #### 2. Threshold Voltage Extraction & Velocity Saturation  
-- Sweep \( V_{GS} \) vs. \( I_D \) and extract the **threshold voltage (V\_t)** using linear extrapolation.  
-- Observe the effects of **velocity saturation** in the short-channel regime.
+- Sweep Vgs vs. Id and extract the threshold voltage (Vt) using linear extrapolation.  
+- Observe the effects of velocity saturation in the short-channel regime.
 
 #### 3. CMOS Inverter: Voltage Transfer Characteristic (VTC)  
-- Construct a **CMOS inverter** (PMOS + NMOS).  
-- Sweep the input voltage and plot \( V_{out} \) vs. \( V_{in} \).  
-- Identify the **switching threshold (V\_m)** where \( V_{in} = V_{out} \).
+- Construct a CMOS inverter (PMOS + NMOS).  
+- Sweep the input voltage and plot Vout vs. Vin.  
+- Identify the switching threshold (Vm) where Vin = Vout.
 
 #### 4. Transient Behavior: Rise / Fall Delays  
 - Apply a **pulse input** to the inverter circuit.  
 - Measure **rise** and **fall propagation delays** (at \( V_{DD}/2 \) crossing points).
 
 #### 5. Noise Margin / Robustness Analysis  
-- From the **VTC plot**, determine \( V_{IL}, V_{IH}, V_{OL}, V_{OH} \).  
+- From the **VTC plot**, determine
+  - VIL (Input Low Voltage)  
+  - VIH (Input High Voltage)  
+  - VOL (Output Low Voltage)  
+  - VOH (Output High Voltage) 
 - Compute noise margins:  
-  \[
-  NM_L = V_{IL} - V_{OL}, \quad NM_H = V_{OH} - V_{IH}
-  \]
+  - NML = VIL - VOL  
+  - NMH = VOH - VIH  
 - Analyze circuit robustness and logic-level stability.
 
 #### 6. Power-Supply and Device Variation Studies  
@@ -59,16 +62,12 @@ You will carry out a sequence of CMOS design and SPICE simulation activities, mi
 
 ---
 
-> This foundational exercise bridges transistor-level physics with system-level timing analysis — helping you understand how **SPICE simulation results** translate into **STA timing libraries** and **cell characterization**.
- 
-
----
-
 ## 2. SPICE Netlists / Code  
 
 ### 2.1 Id vs Vds (Netlist)
 ```
 *** NMOS Id-Vds characteristic***
+
 ```
 ### 2.2 Voltage Transfer Characteristic (Netlist)
 ```
