@@ -59,7 +59,37 @@ $ sudo apt install gtkwave
 ![gtkwave install](https://github.com/user-attachments/assets/13abd841-7aba-440d-bd6a-62997ea80f3c)
 
 # ngspice
+```
+sudo apt update
+sudo apt upgrade -y
 
+sudo apt remove --purge ngspice -y
+sudo apt autoremove -y
+which ngspice
+
+sudo apt install -y build-essential git autoconf automake libtool \
+    xorg-dev libx11-dev libxext-dev libxft-dev libxpm-dev \
+    libreadline-dev libfftw3-dev libpng-dev
+
+sudo apt install -y xorg openbox x11-apps
+xclock
+
+sudo apt install -y dkms linux-headers-$(uname -r)
+sudo mkdir -p /media/cdrom
+sudo mount /dev/cdrom /media/cdrom
+sudo /media/cdrom/VBoxLinuxAdditions.run
+sudo reboot
+
+cd ~/Downloads
+tar -xzf ngspice-45.2.tar.gz
+cd ngspice-45.2
+
+./configure --prefix=/usr/local --with-x --enable-xspice --enable-cider
+make
+sudo make install
+ngspice -v
+
+```
 
 ![ngspice install](https://github.com/user-attachments/assets/eed7267c-7a8a-426a-b51c-b3e80400cd69)
 
