@@ -58,14 +58,14 @@ Submit documentation showing **clear installation and execution proof**:
 ### **1. Terminal Snapshots**
 Include screenshots showing:
 
-#### 1. Clone the OpenROAD Repository
+#### a. Clone the OpenROAD Repository
 
 ```bash
 git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts
 cd OpenROAD-flow-scripts
 ```
 
-#### 2. Run the Setup Script
+#### b. Run the Setup Script
 
 ```bash
 sudo ./setup.sh
@@ -73,7 +73,7 @@ sudo ./setup.sh
 ![set up script 1](https://github.com/user-attachments/assets/f585fd1c-44e2-4504-bacd-663f954ab3b5)
 
 
-#### 3. Build OpenROAD
+#### c. Build OpenROAD
 
 ```bash
 ./build_openroad.sh --local
@@ -81,7 +81,7 @@ sudo ./setup.sh
 
 ![build openroad 2](https://github.com/user-attachments/assets/64d6df50-5c6c-401e-a6d7-ae7b11e8c054)
 
-#### 4. Verify Installation
+#### d. Verify Installation
 
 ```bash
 source ./env.sh
@@ -91,7 +91,7 @@ yosys -help
 
 ### **2. Images / Outputs**
 
-### 1. Run the OpenROAD Flow
+#### e. Run the OpenROAD Flow
 
 ```bash
 cd flow
@@ -99,7 +99,7 @@ make
 ```
 
 
-### 2. Launch the graphical user interface (GUI) to visualize the final layout
+#### f. Launch the graphical user interface (GUI) to visualize the final layout
 
 ```bash
  make gui_final
@@ -148,5 +148,3 @@ By the end of **Week 5**, you will have:
 - ✅ Produced visual and logged evidence of your working environment  
 
 ---
-
-**End of Week 5 Task**
