@@ -160,9 +160,10 @@ docker
 ./flow.tcl -interactive
 
 # Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
-package require openlane 1.0.2
+package require openlane 1.0
 
 # Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+set design_name  picorv32a
 prep -design picorv32a
 
 # Now that the design is prepped and ready, we can run synthesis using following command
