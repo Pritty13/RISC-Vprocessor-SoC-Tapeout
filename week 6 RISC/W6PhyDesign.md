@@ -344,10 +344,10 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ```
 
 Screenshots of floorplan def in magic
-
+![6 1 magic layout after placement](https://github.com/user-attachments/assets/9346bf08-5b2b-4453-924d-208a0a63578a)
 
 Standard cells legally placed 
-
+![6 2 magic layout after placement](https://github.com/user-attachments/assets/6e45d0a5-8c6d-435f-86d3-cb2ec505b2f6)
 
 Commands to exit from current run
 
@@ -373,10 +373,6 @@ exit
 5. Post-layout ngspice simulations.
 6. Find problem in the DRC section of the old magic tech file for the skywater process and fix them.
 
-* Section 3 - Tasks 1 to 5 files, reports and logs can be found in the following folder:
-
-
-* Section 3 - Task 6 files, reports and logs can be found in the following folder:
 
 
 #### 1. Clone custom inverter standard cell design from github repository
@@ -402,26 +398,34 @@ magic -T sky130A.tech sky130_inv.mag &
 ```
 
 Screenshot of commands run
+![7 1 copy vsdstdcelldesign](https://github.com/user-attachments/assets/ac60fac1-90ea-4d6a-a932-c7cabf9d4e9e)
 
 
 #### 2. Load the custom inverter layout in magic and explore.
 
 Screenshot of custom inverter layout in magic
+![7 2 magic inverter](https://github.com/user-attachments/assets/a7fb505d-9f75-406e-882d-e076ff8f2b20)
 
 
 NMOS and PMOS identified
+![7 3 magic inverter nmos](https://github.com/user-attachments/assets/072d0521-696f-4948-862c-df0d4e9b975f)
+![7 4 magic inverter pmos](https://github.com/user-attachments/assets/b97f358d-37a5-4911-ad38-248469c33821)
 
 
 Output Y connectivity to PMOS and NMOS drain verified
+![7 5 magic inverter y](https://github.com/user-attachments/assets/74e91c57-2945-4bc4-9767-e34aa299c263)
 
 
 PMOS source connectivity to VDD (here VPWR) verified
+![7 6 magic inverter vpwr](https://github.com/user-attachments/assets/42d5d624-23b7-47e2-88ba-0f4516abd5d0)
 
 
 NMOS source connectivity to VSS (here VGND) verified
+![7 7 magic inverter vgnd](https://github.com/user-attachments/assets/a0485ec6-77eb-4d1a-a82c-db62837fca8a)
 
 
 Deleting necessary layout part to see DRC error
+![7 8 magic inverter DRC with error](https://github.com/user-attachments/assets/04f93cf9-b718-4cc8-b3fc-b1400bb6a1be)
 
 
 #### 3. Spice extraction of inverter in magic.
@@ -443,9 +447,11 @@ ext2spice
 ```
 
 Screenshot of tkcon window after running above commands
+![8 1 extraction](https://github.com/user-attachments/assets/21eb2a0e-9f71-4019-8130-0562ba1fa0b9)
 
 
 Screenshot of created spice file
+![8 2 after ext spice file](https://github.com/user-attachments/assets/6f5306ba-b46b-48d9-acf8-3b69f48902cb)
 
 
 #### 4. Editing the spice model file for analysis through simulation.
