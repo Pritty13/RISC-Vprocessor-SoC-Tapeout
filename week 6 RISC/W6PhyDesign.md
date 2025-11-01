@@ -158,17 +158,25 @@ docker
 ```tcl
 # Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
 ./flow.tcl -interactive
-
+```
+![openlane opening 1 1](https://github.com/user-attachments/assets/cc8bf309-0fe1-403b-b206-405db9bfa60e)
+```
 # Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
 package require openlane 0.9
 
 # Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
 set design_name  picorv32a
 prep -design picorv32a
+```
 
+```
 # Now that the design is prepped and ready, we can run synthesis using following command
 run_synthesis
+```
+![design set 1 2](https://github.com/user-attachments/assets/9e4101f3-0b8b-4d51-8acb-a73a1b4d738c)
+![synthesis 1 3](https://github.com/user-attachments/assets/14cfa39d-88b4-48bf-b2de-10385418292a)
 
+```
 # Exit from OpenLANE flow
 exit
 
@@ -176,12 +184,12 @@ exit
 exit
 ```
 
-Screenshots of running each commands
-
 
 #### 2. Calculate the flop ratio.
 
 Screenshots of synthesis statistics report file with required values highlighted
+![2 1 flop ratio ](https://github.com/user-attachments/assets/f289fa90-0f6e-4d24-b8cf-d4b1fa5ff4ce)
+![2 2 flop ratio ](https://github.com/user-attachments/assets/fdbfa5a2-84b3-4009-888e-bdbe14fd1c77)
 
 
 Calculation of Flop Ratio and DFF % from synthesis statistics report file
@@ -209,9 +217,6 @@ Section 2 tasks:-
 ```math
 Area\ of\ die\ in\ microns = Die\ width\ in\ microns * Die\ height\ in\ microns
 ```
-
-* All section 2 logs, reports and results can be found in following run folder:
-
 
 #### 1. Run 'picorv32a' design floorplan using OpenLANE flow and generate necessary outputs.
 
@@ -243,11 +248,14 @@ run_floorplan
 ```
 
 Screenshot of floorplan run
+![3 1 floorplanrun](https://github.com/user-attachments/assets/ba9af06b-3315-426b-85ed-227ea025675a)
+![3 2 floorplanrun](https://github.com/user-attachments/assets/69e6a8f0-014c-49d7-8213-a1a457de5336)
 
 
 #### 2. Calculate the die area in microns from the values in floorplan def.
 
 Screenshot of contents of floorplan def
+![3 3 die area](https://github.com/user-attachments/assets/75fc78d3-64c9-4c0b-bc98-34c4e017552a)
 
 
 According to floorplan def
@@ -287,21 +295,27 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 
 Screenshots of floorplan def in magic
 
+![4 1 magic](https://github.com/user-attachments/assets/d0ff205d-7dc8-4df8-865e-db7ff6db48a3)
 
 Equidistant placement of ports
 
+![4 2 magic](https://github.com/user-attachments/assets/e271e065-e409-4aba-9423-07267061dcf4)
 
 Port layer as set through config.tcl
-
+![4 3 magic](https://github.com/user-attachments/assets/c93a62f5-d554-4777-afb2-ef2eed77a227)
 
 Decap Cells and Tap Cells
 
+![4 4 magic](https://github.com/user-attachments/assets/7ad601de-380a-42f9-ac9c-5e589682808b)
 
 Diogonally equidistant Tap cells
+![4 6 magic](https://github.com/user-attachments/assets/92ac8c8f-b6f1-4d5d-b546-7c45d5f9f60c)
 
+![4 7 magic](https://github.com/user-attachments/assets/69f1886f-cd0e-4f6f-8ba4-591fa08e8a42)
 
 Unplaced standard cells at the origin
 
+![4 8 magic](https://github.com/user-attachments/assets/c5f8b17e-9b4f-40b1-aacb-4467029e3208)
 
 #### 4. Run 'picorv32a' design congestion aware placement using OpenLANE flow and generate necessary outputs.
 
@@ -313,7 +327,9 @@ run_placement
 ```
 
 Screenshots of placement run
+![5 1 runplacement](https://github.com/user-attachments/assets/b6d4e4d6-d5f8-4fa3-8e92-dd2ec3880357)
 
+![5 2 runplacement](https://github.com/user-attachments/assets/6a0cac7d-1204-4c44-83e7-d2649aa83283)
 
 #### 5. Load generated placement def in magic tool and explore the placement.
 
