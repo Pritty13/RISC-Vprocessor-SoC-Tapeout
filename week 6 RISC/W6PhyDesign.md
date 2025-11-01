@@ -148,7 +148,7 @@ Commands to invoke the OpenLANE flow and perform synthesis
 
 ```bash
 # Change directory to openlane flow directory
-cd /home/prittyriscv1/OpenLane
+cd ~/Desktop/work/tools/openlane_working_dir/openlane
 
 
 # alias docker='docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) efabless/openlane:v0.21'
@@ -160,7 +160,7 @@ docker
 ./flow.tcl -interactive
 
 # Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
-package require openlane 1.0
+package require openlane 0.9
 
 # Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
 set design_name  picorv32a
@@ -279,7 +279,7 @@ Commands to load floorplan def in magic in another terminal
 
 ```bash
 # Change directory to path containing generated floorplan def
-cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/17-03_12-06/results/floorplan/
+cd ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-11_09-04/results/floorplan/
 
 # Command to load the floorplan def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.floorplan.def &
