@@ -8,7 +8,7 @@ Comments
 
 > 2 Week digital VLSI SoC design and planning workshop with complete RTL2GDSII flow organised by VSD in collaboration with NASSCOM
 
-## Section 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK (14/03/2024 - 15/03/2024)
+## Section 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK 
 
 ### Theory
 
@@ -141,7 +141,6 @@ Percentage\ of\ DFF's = Flop\ Ratio * 100
 
 * All section 1 logs, reports and results can be found in following run folder:
 
-[Section 1 Run - 15-03_15-51](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/tree/main/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/15-03_15-51)
 
 #### 1. Run 'picorv32a' design synthesis using OpenLANE flow and generate necessary outputs.
 
@@ -192,7 +191,7 @@ Flop\ Ratio = \frac{1613}{14876} = 0.108429685
 Percentage\ of\ DFF's = 0.108429685 * 100 = 10.84296854\ \%
 ```
 
-## Section 2 - Good floorplan vs bad floorplan and introduction to library cells (16/03/2024 - 17/03/2024)
+## Section 2 - Good floorplan vs bad floorplan and introduction to library cells 
 
 ### Theory
 
@@ -342,7 +341,7 @@ exit
 exit
 ```
 
-## Section 3 - Design library cell using Magic Layout and ngspice characterization (18/03/2024 - 21/03/2024)
+## Section 3 - Design library cell using Magic Layout and ngspice characterization 
 
 ### Theory
 
@@ -652,7 +651,7 @@ drc why
 Screenshot of magic window with rule implemented
 
 
-## Section 4 - Pre-layout timing analysis and importance of good clock tree (22/03/2024 - 24/03/2024)
+## Section 4 - Pre-layout timing analysis and importance of good clock tree 
 
 ### Theory
 
@@ -1299,10 +1298,6 @@ exit
 
 Screenshots of commands run and timing report generated
 
-![Screenshot from 2024-03-26 12-55-00](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/ee26dfa7-715a-4df7-97e7-4c6e54d16522)
-![Screenshot from 2024-03-26 12-57-40](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/e04a4dfd-000c-406b-bdaa-f5314c4eedef)
-![Screenshot from 2024-03-26 12-58-12](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/ac27d567-1b72-444d-a638-9be2db677ae2)
-![Screenshot from 2024-03-26 13-09-57](https://github.com/fayizferosh/soc-design-and-planning-nasscom-vsd/assets/63997454/e63cac70-072d-4453-992e-076b94f8f1a2)
 
 #### 13. Explore post-CTS OpenROAD timing analysis by removing 'sky130_fd_sc_hd__clkbuf_1' cell from clock buffer list variable 'CTS_CLK_BUFFER_LIST'.
 
@@ -1386,7 +1381,7 @@ Screenshots of commands run and timing report generated
 
 
 
-## Section 5 - Final steps for RTL2GDS using tritonRoute and openSTA (25/03/2024 - 26/03/2024)
+## Section 5 - Final steps for RTL2GDS using tritonRoute and openSTA
 
 ### Theory
 
