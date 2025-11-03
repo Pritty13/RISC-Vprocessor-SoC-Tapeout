@@ -3,7 +3,7 @@
 ## Welcome to my journey through the SoC Tapeout Program VSD!
 This repository documents my week-by-week progress with tasks inside each week.
 
-### Week 0 — Setup & Tools
+### Weeks Tasks with desciptions and status
 | Task                 | Description                                                     | Status |
 |----------------------|-----------------------------------------------------------------|--------|
 | Task 0 / Week 0      | Tools Installation — Installed Iverilog, Yosys, and gtkWave     | Done   |
@@ -13,9 +13,12 @@ This repository documents my week-by-week progress with tasks inside each week.
 | Task 4/ week 1/Day4|Blocking and non-blocking statements for GLS, Synthesis-simulation Mismatch|Done   |
 | Task 5/ week 1/Day5|Conditional and cases (complete, incomplete, bad, partial assign)|Done   |
 | Task 6 / week 2|SoC and Baby SoC [https://github.com/Pritty13/RISC-Vprocessor-SoC-Tapeout/tree/Pritty13-Week2-SoC-RISC-V-Processor]|Done |
+|Task 7 (Part 1)/ week 3 | BabySoC Gate-Level Simulation (GLS) – Post-Synthesis [https://github.com/Pritty13/RISC-Vprocessor-SoC-Tapeout/blob/Pritty13-Week3-SoC-RISC-V-Processor/week3%20RISC/P1PostsynthesisGLS.md] | Done|
+|Task 8 (Part 2)/ week 3 | Fundamentals of STA (Static Timing Analysis) [https://github.com/Pritty13/RISC-Vprocessor-SoC-Tapeout/blob/Pritty13-Week3-SoC-RISC-V-Processor/week3%20RISC/P2FundamentalsofSTA.md] | Done|
+|Task 9 (Part 3)/ week 3 | Generate Timing Graphs with OpenSTA [https://github.com/Pritty13/RISC-Vprocessor-SoC-Tapeout/blob/Pritty13-Week3-SoC-RISC-V-Processor/week3%20RISC/P3GLS.STA.md] | Done|
+|Task 10 / week 4 | CMOS CIRCUIT DESIGN [https://github.com/Pritty13/RISC-Vprocessor-SoC-Tapeout/blob/Pritty13-Week4-SoC-RISC-V-Processor/week%204%20RISC/Week4CMOSCD.md] | Done|
+|Task 11 / week 5 | OpenROAD Flow Setup and Floorplan + Placement [https://github.com/Pritty13/RISC-Vprocessor-SoC-Tapeout/blob/Pritty13-Week5-SoC-RISC-V-Processor/week%205%20RISC/week5ORFSup%26FP%2BP.md] | Tried my best|
+|Task 12 (combination of multiple tasks) / week 6 | Digital VLSI SoC Design and Planning [https://github.com/Pritty13/RISC-Vprocessor-SoC-Tapeout/blob/Pritty13-Week6-SoC-RISC-V-Processor/week%206%20RISC/W6PhyDesign.md] | Done|
+    
+    
 
-**Key Learnings from Week 0**
-
-    Installed and verified open-source EDA tools successfully.
-    Learned about basic environment setup for RTL design and synthesis.
-    Prepared the system for upcoming RTL → GDSII flow experiments.
