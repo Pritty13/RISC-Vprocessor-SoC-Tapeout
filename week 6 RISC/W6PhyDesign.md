@@ -870,6 +870,10 @@ prep -design picorv32a
 # Adiitional commands to include newly added lef to openlane flow
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
 add_lefs -src $lefs
+*or*  
+set lefs [glob $::env(DESIGN_DIR)/src/sky130_vsdinv.lef]
+add_lefs -src $lefs
+
 
 # Now that the design is prepped and ready, we can run synthesis using following command
 run_synthesis
