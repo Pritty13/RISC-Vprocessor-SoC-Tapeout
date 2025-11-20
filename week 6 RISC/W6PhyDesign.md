@@ -893,7 +893,7 @@ Commands to view and change parameters to improve timing and run synthesis
 
 ```tcl
 # Now once again we have to prep design so as to update variables
-prep -design picorv32a -tag 24-03_10-03 -overwrite
+prep -design picorv32a -tag /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/03-11_08-51 -overwrite
 
 # Addiitional commands to include newly added lef to openlane flow merged.lef
 set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
