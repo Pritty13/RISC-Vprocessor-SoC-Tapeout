@@ -457,9 +457,11 @@ Screenshot of created spice file
 #### 4. Editing the spice model file for analysis through simulation.
 
 Measuring unit distance in layout grid
+![9 1 inverter box size](https://github.com/user-attachments/assets/a0667815-b5fe-4617-b910-183db48858e6)
 
 
 Final edited spice file ready for ngspice simulation
+![9 2 sky130_inv spice file updated](https://github.com/user-attachments/assets/08939adf-cc7c-4c3f-b616-4268209f89ff)
 
 
 #### 5. Post-layout ngspice simulations.
@@ -476,8 +478,13 @@ plot y vs time a
 
 Screenshots of ngspice run
 
+![10 1 sky130_inv spice ngspice simulation](https://github.com/user-attachments/assets/cb9b8381-7c71-41bf-88d3-a0db094f2fb3)
+
 
 Screenshot of generated plot
+
+![10 2 sky130_inv spice ngspice output plot](https://github.com/user-attachments/assets/29e5a14a-ef29-484f-bd5a-7ba3a969dc3e)
+![10 3 sky130_inv spice ngspice output plot](https://github.com/user-attachments/assets/9fd3aa24-a02d-456c-abe1-2ff6a53e0ed6)
 
 
 Rise transition time calculation
@@ -493,9 +500,13 @@ Rise\ transition\ time = Time\ taken\ for\ output\ to\ rise\ to\ 80\% - Time\ ta
 ```
 
 20% Screenshots
+![10 4 sky130_inv spice ngspice rise plot 20%](https://github.com/user-attachments/assets/e5edfb68-a6d6-43d1-bb89-db51ade7a7a3)
+![10 5 sky130_inv spice ngspice rise plot 20%](https://github.com/user-attachments/assets/3d3a3bc7-d9d9-49b0-86b2-c4da862113aa)
 
 
 80% Screenshots
+![10 6 sky130_inv spice ngspice rise plot 80%](https://github.com/user-attachments/assets/fea54849-c38e-4972-9a48-2b489b80e237)
+![10 7 sky130_inv spice ngspice rise plot 80%](https://github.com/user-attachments/assets/921ba4b9-90be-471a-b43b-d298613f49ad)
 
 
 ```math
@@ -515,9 +526,13 @@ Fall\ transition\ time = Time\ taken\ for\ output\ to\ fall\ to\ 20\% - Time\ ta
 ```
 
 20% Screenshots
+![10 8 sky130_inv spice ngspice fall plot 20%](https://github.com/user-attachments/assets/ba136a9a-61a3-470f-959d-5f6d327a03b7)
+![10 9 sky130_inv spice ngspice fall plot 20%](https://github.com/user-attachments/assets/14a3306c-aa23-4085-8ff2-261597a106a4)
 
 
 80% Screenshots
+![10 10 sky130_inv spice ngspice fall plot 80%](https://github.com/user-attachments/assets/4720904a-1d77-420a-9593-d45f5c117171)
+![10 11 sky130_inv spice ngspice fall plot 80%](https://github.com/user-attachments/assets/a87c5bd9-8b8f-4319-882c-e62f8f1ab305)
 
 
 ```math
@@ -534,6 +549,8 @@ Rise\ Cell\ Delay = Time\ taken\ for\ output\ to\ rise\ to\ 50\% - Time\ taken\ 
 ```
 
 50% Screenshots
+![10 12 sky130_inv spice ngspice rise delay](https://github.com/user-attachments/assets/be5697e4-5bbe-4ed9-a3db-3745c2c3ff96)
+![10 13 sky130_inv spice ngspice rise delay](https://github.com/user-attachments/assets/b4e361f6-3e22-4ed8-9d3e-6a3b4741e72d)
 
 
 ```math
@@ -550,6 +567,8 @@ Fall\ Cell\ Delay = Time\ taken\ for\ output\ to\ fall\ to\ 50\% - Time\ taken\ 
 ```
 
 50% Screenshots
+![10 14 sky130_inv spice ngspice fall delay](https://github.com/user-attachments/assets/5cc0bed5-fbe9-46c0-a938-41bfc30b0653)
+![10 15 sky130_inv spice ngspice fall delay](https://github.com/user-attachments/assets/18f6e5a1-8f14-4f75-8837-6129a194bba3)
 
 
 ```math
@@ -586,20 +605,27 @@ magic -d XR &
 ```
 
 Screenshots of commands run
+![11 1 DRC old tech file update](https://github.com/user-attachments/assets/6ed7c156-3947-4086-a5d0-3a72f748f63c)
+![11 2 DRC old tech file update](https://github.com/user-attachments/assets/28900003-898e-4eff-ace5-e8c3ec4c3e92)
 
 
-Screenshot of .magicrc file
+Screenshot of .![11 3 gvim  magicir file](https://github.com/user-attachments/assets/95018c95-0276-424b-b6b8-edf07762fc96)
+magicrc file
 
 
 **Incorrectly implemented poly.9 simple rule correction**
 
 Screenshot of poly rules
+![12 1 poly rules](https://github.com/user-attachments/assets/ed1b510f-f228-4061-998b-062e87919bbb)
 
 
 Incorrectly implemented poly.9 rule no drc violation even though spacing < 0.48u
+![12 2 poly9 incorrect rule](https://github.com/user-attachments/assets/f03286e0-9c20-4b61-a7d5-b2260a53e99b)
 
 
 New commands inserted in sky130A.tech file to update drc
+![12 3 poly9 correct rule](https://github.com/user-attachments/assets/eabb15e1-697f-4a52-996e-63f83822ab89)
+![12 4 poly9 correct rule](https://github.com/user-attachments/assets/499ede26-bde6-4a2e-a7b0-d8d1ab0f6cc7)
 
 
 Commands to run in tkcon window
@@ -616,18 +642,7 @@ drc why
 ```
 
 Screenshot of magic window with rule implemented
-
-
-**Incorrectly implemented difftap.2 simple rule correction**
-
-Screenshot of difftap rules
-
-
-Incorrectly implemented difftap.2 rule no drc violation even though spacing < 0.42u
-
-
-New commands inserted in sky130A.tech file to update drc
-
+![12 4 poly9 DRC error](https://github.com/user-attachments/assets/5d7006cd-bdf0-42df-bb9a-8c98ee1a1753)
 
 Commands to run in tkcon window
 
@@ -641,38 +656,6 @@ drc check
 # Selecting region displaying the new errors and getting the error messages 
 drc why
 ```
-
-Screenshot of magic window with rule implemented
-
-
-**Incorrectly implemented nwell.4 complex rule correction**
-
-Screenshot of nwell rules
-
-
-Incorrectly implemented nwell.4 rule no drc violation even though no tap present in nwell
-
-
-New commands inserted in sky130A.tech file to update drc
-
-
-Commands to run in tkcon window
-
-```tcl
-# Loading updated tech file
-tech load sky130A.tech
-
-# Change drc style to drc full
-drc style drc(full)
-
-# Must re-run drc check to see updated drc errors
-drc check
-
-# Selecting region displaying the new errors and getting the error messages 
-drc why
-```
-
-Screenshot of magic window with rule implemented
 
 
 ## Section 4 - Pre-layout timing analysis and importance of good clock tree 
@@ -729,6 +712,7 @@ magic -T sky130A.tech sky130_inv.mag &
 ```
 
 Screenshot of tracks.info of sky130_fd_sc_hd
+![13 1 track info](https://github.com/user-attachments/assets/e192ac2d-bb2d-4389-abd1-df4fa085aa76)
 
 
 Commands for tkcon window to set grid as tracks of locali layer
@@ -742,13 +726,17 @@ grid 0.46um 0.34um 0.23um 0.17um
 ```
 
 Screenshot of commands run
+![13 2 layout with grid](https://github.com/user-attachments/assets/995e61fa-9a4d-4bfa-b190-49a833aac569)
 
 
 
 Condition 1 verified
+![13 3 layout with grid cond1](https://github.com/user-attachments/assets/147112e9-be25-47ec-af94-a41bb2cd8565)
 
 
 Condition 2 verified
+![13 4 layout with grid cond2](https://github.com/user-attachments/assets/f2c69291-9e71-40d2-a2c3-51dfbdfc43cf)
+
 
 ```math
 Horizontal\ track\ pitch = 0.46\ um
@@ -759,7 +747,7 @@ Horizontal\ track\ pitch = 0.46\ um
 Width\ of\ standard\ cell = 1.38\ um = 0.46 * 3
 ```
 
-Condition 3 verified
+
 
 ```math
 Vertical\ track\ pitch = 0.34\ um
@@ -782,13 +770,14 @@ save sky130_vsdinv.mag
 
 Command to open the newly saved layout
 
+
 ```bash
 # Command to open custom inverter layout in magic
 magic -T sky130A.tech sky130_vsdinv.mag &
 ```
 
 Screenshot of newly saved layout
-
+![13 5 layout saved updated](https://github.com/user-attachments/assets/f9f69a9a-cbdd-4d15-b3c2-d2e1a136a089)
 
 
 #### 3. Generate lef from the layout.
@@ -801,10 +790,12 @@ lef write
 ```
 
 Screenshot of command run
-
-
+![13 6 lef file created](https://github.com/user-attachments/assets/6b557c77-435a-4be4-ba87-b3869a7a6ff7)
 
 Screenshot of newly created lef file
+
+![13 7 lef file created](https://github.com/user-attachments/assets/aa4dc097-cb53-46f6-a731-6bfdf3308466)
+
 
 
 #### 4. Copy the newly generated lef and associated required lib files to 'picorv32a' design 'src' directory.
@@ -826,6 +817,7 @@ ls ~/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src/
 ```
 
 Screenshot of commands run
+![13 8 command run](https://github.com/user-attachments/assets/60a55933-6738-477e-9cf3-639c7c9d5333)
 
 
 #### 5. Edit 'config.tcl' to change lib file and add the new extra lef into the openlane flow.
@@ -843,6 +835,7 @@ set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/sr
 
 Edited config.tcl to include the added lef and change library to ones we added in src directory
 
+![13 9 edited config tcl](https://github.com/user-attachments/assets/780c3bd2-df0d-42cc-aef5-578f41108e3f)
 
 
 #### 6. Run openlane flow synthesis with newly inserted custom inverter cell.
@@ -878,13 +871,20 @@ run_synthesis
 ```
 
 Screenshots of commands run
+![14 1 synthesis run after custom inverter included](https://github.com/user-attachments/assets/71e42084-7e48-41dd-9dc1-b3fb645bc760)
 
+![14 2 synthesis run after custom inverter included](https://github.com/user-attachments/assets/6ef0f31b-a575-423d-8fbb-9be1f0bae6fe)
+
+![14 3 synthesis run after custom inverter included](https://github.com/user-attachments/assets/d6513983-1367-4f6f-a005-cfaaa1c798a9)
+![14 4 synthesis run after custom inverter included](https://github.com/user-attachments/assets/de9165f2-1384-493d-b573-2debb63b127c)
 
 
 #### 7. Remove/reduce the newly introduced violations with the introduction of custom inverter cell by modifying design parameters.
 
 Noting down current design values generated before modifying parameters to improve timing
+![14 5 chip area before modified](https://github.com/user-attachments/assets/b3d03ec0-13d0-40ee-ac81-bb44b468c1d2)
 
+![14 5 tns wns before modified](https://github.com/user-attachments/assets/2a8ec288-eb9c-4e22-96f6-0301dccec8e0)
 
 
 Commands to view and change parameters to improve timing and run synthesis
@@ -920,14 +920,19 @@ run_synthesis
 ```
 
 Screenshot of merged.lef in `tmp` directory with our custom inverter as macro
-
+![14 6 merged lef in tmp](https://github.com/user-attachments/assets/5acc37ba-4cb1-4dc7-bc82-ccba8f2f23a9)
 
 
 Screenshots of commands run
-
+![14 7 command run](https://github.com/user-attachments/assets/318c1139-3894-4638-afe8-2e22f9cad5fe)
+![14 8 command run](https://github.com/user-attachments/assets/3ba2c40c-490b-47d8-8c33-e8f84214c857)
+![14 9 synthesis run after modified](https://github.com/user-attachments/assets/e9c17b89-9606-4d0d-af15-cd55d6c47ff0)
 
 Comparing to previously noted run values area has increased and worst negative slack has become 0
 
+![14 10 chip area after modified](https://github.com/user-attachments/assets/d1d166b2-33ef-4fcb-94d6-5e006af5129e)
+
+![14 11 tns wns after modified](https://github.com/user-attachments/assets/934a219d-e001-4207-b86d-570aa81872ea)
 
 #### 8. Once synthesis has accepted our custom inverter we can now run floorplan and placement and verify the cell is accepted in PnR flow.
 
@@ -939,6 +944,8 @@ run_floorplan
 ```
 
 Screenshots of command run
+![14 12 run floorplan](https://github.com/user-attachments/assets/a25ee482-8809-4fe5-95d8-df9e94f274d4)
+![14 13 run floorplan error](https://github.com/user-attachments/assets/c4d91bed-a43c-48eb-a0b8-27e211e6ed9c)
 
 
 Since we are facing unexpected un-explainable error while using `run_floorplan` command, we can instead use the following set of commands available based on information from `Desktop/work/tools/openlane_working_dir/openlane/scripts/tcl_commands/floorplan.tcl` and also based on `Floorplan Commands` section in `Desktop/work/tools/openlane_working_dir/openlane/docs/source/OpenLANE_commands.md`
@@ -951,7 +958,10 @@ tap_decap_or
 ```
 
 Screenshots of commands run
+![14 14 run floorplan error solution](https://github.com/user-attachments/assets/49cac464-8d83-46d8-95c1-152b3c44c796)
+![14 15 run floorplan error solution](https://github.com/user-attachments/assets/de3f2633-b6e6-44fe-a098-0690d3e7b902)
 
+![14 16 run floorplan error solution](https://github.com/user-attachments/assets/2e47a0ae-5611-4a94-89ae-7562d4159cd7)
 
 
 Now that floorplan is done we can do placement using following command
@@ -962,6 +972,7 @@ run_placement
 ```
 
 Screenshots of command run
+![14 17 run placement](https://github.com/user-attachments/assets/95bddd8f-45de-4ba7-8255-841b9d4f9865)
 
 
 Commands to load placement def in magic in another terminal
@@ -976,10 +987,12 @@ cd /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv
 ```
 
 Screenshot of placement def in magic
+![15 1 def magic](https://github.com/user-attachments/assets/08c1a165-b007-434f-a259-38127a4c7a33)
 
 
 
 Screenshot of custom inverter inserted in placement def with proper abutment
+![15 2 def magic](https://github.com/user-attachments/assets/6f08d132-59c5-47b6-8981-7d8c370dbdce)
 
 
 Command for tkcon window to view internal layers of cells
@@ -990,6 +1003,7 @@ expand
 ```
 
 Abutment of power pins with other cell from library clearly visible
+![15 3 def magic after expand](https://github.com/user-attachments/assets/2ffc01ad-8e04-4881-8a3c-6f2e8b2d2215)
 
 
 
@@ -1029,14 +1043,17 @@ run_synthesis
 ```
 
 Commands run final screenshot
+![15 4 synthesis success](https://github.com/user-attachments/assets/e98b9c2b-4599-405f-bca1-0c4569f9d691)
 
 
 
 Newly created `pre_sta.conf` for STA analysis in `openlane` directory
+![15 5 pre_sta conf](https://github.com/user-attachments/assets/3e044011-e713-42cf-8844-a65e3cb5b1f3)
 
 
 
 Newly created `my_base.sdc` for STA analysis in `openlane/designs/picorv32a/src` directory based on the file `openlane/scripts/base.sdc`
+![15 6 mybase sdc](https://github.com/user-attachments/assets/2a7f2149-5ee0-4a62-8f7e-00404cf55df3)
 
 
 Commands to run STA in another terminal
@@ -1050,7 +1067,10 @@ sta pre_sta.conf
 ```
 
 Screenshots of commands run
+![15 7 sta pre_sta conf](https://github.com/user-attachments/assets/e774fd9c-ba92-48d7-ab32-0ad3afe3287a)
+![15 8 sta pre_sta conf](https://github.com/user-attachments/assets/78eb60f0-1496-4cff-9f2d-43869c085fa6)
 
+![15 9 sta pre_sta conf](https://github.com/user-attachments/assets/d65cb837-8f73-4f2c-bb6a-e18aa2816127)
 
 Since more fanout is causing more delay we can add parameter to reduce fanout and do synthesis again
 
@@ -1078,6 +1098,8 @@ run_synthesis
 ```
 
 Commands run final screenshot
+![16 1 openlane run_synthesis](https://github.com/user-attachments/assets/0ca8889b-24e6-4c15-8ecd-613392d19dce)
+![16 2 openlane run_synthesis](https://github.com/user-attachments/assets/07cba6d4-519e-4fb7-b253-1d9daaea98b2)
 
 
 Commands to run STA in another terminal
@@ -1091,14 +1113,16 @@ sta pre_sta.conf
 ```
 
 Screenshots of commands run
+![16 3 updated pre_sta conf](https://github.com/user-attachments/assets/3d8902d9-4a8d-4aa4-aa36-55e89d2876a9)
 
+![16 4 updated pre_sta conf](https://github.com/user-attachments/assets/7cc19e0a-b0b5-44c5-9e6b-ac9d4231a190)
 
+![16 5 updated pre_sta conf](https://github.com/user-attachments/assets/4a13202a-1894-48c6-89f8-e15a046087b7)
 
 #### 10. Make timing ECO fixes to remove all violations.
 
 OR gate of drive strength 2 is driving 4 fanouts
-
-
+![16 6 slack inc due or gate 1](https://github.com/user-attachments/assets/d1c03ab7-8cf1-408e-bd97-10da0127c778)
 
 Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
 
@@ -1117,9 +1141,15 @@ report_checks -fields {net cap slew input_pins} -digits 4
 ```
 
 Result - slack reduced
+![16 7 change or gate 1](https://github.com/user-attachments/assets/56703055-d873-4c78-bd21-a33115b4bdca)
+![16 8 updated 1 slack](https://github.com/user-attachments/assets/32d32ca6-cbfd-4829-abb9-a9e25d9458b0)
+![16 9 updated 1 slack](https://github.com/user-attachments/assets/52825e7c-539c-471a-ba97-fd4e70caf550)
 
+![16 10 updated 1 slack](https://github.com/user-attachments/assets/d00f7e50-bebe-4b5e-8328-f2790c22224c)
 
 OR gate of drive strength 2 is driving 4 fanouts
+
+![16 11 slack inc due or gate 2](https://github.com/user-attachments/assets/ec562821-fc46-470c-b96b-d8ada24d28a8)
 
 
 
@@ -1137,11 +1167,15 @@ report_checks -fields {net cap slew input_pins} -digits 4
 ```
 
 Result - slack reduced
+![16 12 change or gate 2](https://github.com/user-attachments/assets/a4413ac2-57bb-4ae1-b077-94ee5672be87)
+![16 13 updated 2 slack](https://github.com/user-attachments/assets/d287d4c9-90d1-487e-bb5a-6da4d9ce4f15)
+![16 14 updated 2 slack](https://github.com/user-attachments/assets/683f56a0-5922-459f-8949-778ec6309753)
 
+![16 15 updated 2 slack](https://github.com/user-attachments/assets/18792292-11a1-4f20-b156-92ef98f909be)
 
 
 OR gate of drive strength 2 driving OA gate has more delay
-
+![16 16 change or gate 3](https://github.com/user-attachments/assets/c491974a-466a-4c1e-bcda-4dcadaa47cb0)
 
 
 Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
@@ -1158,11 +1192,15 @@ report_checks -fields {net cap slew input_pins} -digits 4
 ```
 
 Result - slack reduced
-
+![16 17 updated 3 slack](https://github.com/user-attachments/assets/542613af-19ed-499c-8300-5602b7833c35)
+![16 18 updated 3 slack](https://github.com/user-attachments/assets/95340e38-6683-4eb5-8115-0212fa05478c)
+![16 19 updated 3 slack](https://github.com/user-attachments/assets/d9b4f4e4-d403-41c2-91de-290fd007a092)
+![16 20 updated 3 slack](https://github.com/user-attachments/assets/3a1c603e-4109-487a-b5bd-77f43ccfdac8)
 
 
 OR gate of drive strength 2 driving OA gate has more delay
 
+![16 21 slack inc due or gate 4](https://github.com/user-attachments/assets/5be3d84b-23d5-4f6e-916d-8b428eb01b4d)
 
 Commands to perform analysis and optimize timing by replacing with OR gate of drive strength 4
 
@@ -1179,6 +1217,12 @@ report_checks -fields {net cap slew input_pins} -digits 4
 
 Result - slack reduced
 
+![16 22 updated 4 slack](https://github.com/user-attachments/assets/e1e5a377-3d2a-41bc-8077-3d8fff9ab001)
+![16 23 updated 4 slack](https://github.com/user-attachments/assets/ac84da0c-0fd0-4d1f-af7b-f1520f73daf1)
+
+![16 24 updated 4 slack](https://github.com/user-attachments/assets/7e05e4d0-cecf-42c3-b13a-1538a837bba9)
+
+![16 25 updated 4 slack](https://github.com/user-attachments/assets/ad7ff377-c41e-449b-a70c-daa7cc72aa93)
 
 
 Commands to verify instance `_14506_`  is replaced with `sky130_fd_sc_hd__or4_4`
@@ -1189,6 +1233,7 @@ report_checks -from _29043_ -to _30440_ -through _14506_
 ```
 
 Screenshot of replaced instance
+![16 26 updated 5 slack](https://github.com/user-attachments/assets/8953787e-42b8-4c4b-aae3-d89abe1e4aa3)
 
 
 
@@ -1215,6 +1260,7 @@ ls
 ```
 
 Screenshot of commands run
+![17 1 copy synthesis file](https://github.com/user-attachments/assets/e799926b-b07b-4988-9d20-e31005844e9f)
 
 
 
@@ -1234,9 +1280,12 @@ exit
 ```
 
 Screenshot of commands run
+![17 2 write_verilog synthesis](https://github.com/user-attachments/assets/471272a1-176b-413f-85df-4f89235c20f0)
 
+![17 3 old synthesis file](https://github.com/user-attachments/assets/dba99a21-6a8b-40f6-b570-d4166f34abd8)
 
 Verified that the netlist is overwritten by checking that instance `_14506_`  is replaced with `sky130_fd_sc_hd__or4_4`
+![17 4 new synthesis file](https://github.com/user-attachments/assets/1f5cd439-2744-4814-b27f-6e8d45d5aa9f)
 
 
 
